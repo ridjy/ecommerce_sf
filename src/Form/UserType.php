@@ -7,6 +7,8 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\CallbackTransformer;
+//ajout du use pour utiliser le type input password de Symfony
+use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 
 class UserType extends AbstractType
 {
@@ -14,10 +16,10 @@ class UserType extends AbstractType
     {
         $builder
             ->add('username')
-            ->add('roles')
-            ->add('password')
+            //->add('roles') //à ajouter par defaut
+            ->add('password', PasswordType::class)
         ;
-        $builder->get('roles')
+        /*$builder->get('roles')
             ->addModelTransformer(new CallbackTransformer(
                 function ($rolesAsArray) {
                     return count($rolesAsArray) ? $rolesAsArray[0]: null;
@@ -25,7 +27,7 @@ class UserType extends AbstractType
                 function ($rolesAsString) {
                     return [$rolesAsString];
                 }
-        ));
+        ));*/
     }
 
     public function configureOptions(OptionsResolver $resolver): void
