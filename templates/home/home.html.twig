@@ -105,9 +105,16 @@
             </a>
           </li>
           <li class="nav-item">
+            {% if app.user is null %} 
             <a href="{{path('app_login')}}" class="nav-link border border-light rounded waves-effect">
               <i class="fa fa-user mr-2"></i> Se connecter
             </a>
+            {% else %}
+            <a href="#" class="nav-link border border-light rounded waves-effect">
+              <i class="fa fa-user mr-2"></i> {{app.user.username}}
+            </a>
+            {% endif %}
+
           </li>
         </ul>
 
