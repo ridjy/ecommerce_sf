@@ -85,6 +85,7 @@ class UserController extends AbstractController
 
     /**
      * @Route("/{id}", name="app_user_delete", methods={"POST"})
+     * @IsGranted("ROLE_ADMIN")
      */
     public function delete(Request $request, User $user, UserRepository $userRepository): Response
     {

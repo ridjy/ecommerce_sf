@@ -110,9 +110,13 @@
               <i class="fa fa-user mr-2"></i> Se connecter
             </a>
             {% else %}
-            <a href="#" class="nav-link border border-light rounded waves-effect">
+            <a href="#" class="nav-link border border-light rounded waves-effect dropdown-toggle" data-toggle="dropdown">
               <i class="fa fa-user mr-2"></i> {{app.user.username}}
             </a>
+            <div class="dropdown-menu" style="left:auto;">
+              <a class="dropdown-item" href="#">Mon compte</a>
+              <a class="dropdown-item" href="#">Mes préférences</a>
+            </div>
             {% endif %}
 
           </li>
@@ -782,11 +786,11 @@
   <!-- JQuery -->
   <script type="text/javascript" src="{{asset('js/jquery-3.4.1.min.js')}}"></script>
   <!-- Bootstrap tooltips -->
-  <script type="text/javascript" src="{{asset('js/jquery-3.4.1.min.js')}}js/popper.min.js"></script>
+  <script type="text/javascript" src="{{asset('js/popper.min.js')}}"></script>
   <!-- Bootstrap core JavaScript -->
-  <script type="text/javascript" src="{{asset('js/jquery-3.4.1.min.js')}}js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="{{asset('js/bootstrap.min.js')}}"></script>
   <!-- MDB core JavaScript -->
-  <script type="text/javascript" src="{{asset('js/jquery-3.4.1.min.js')}}js/mdb.min.js"></script>
+  <script type="text/javascript" src="{{asset('js/mdb.min.js')}}"></script>
   <!-- Initializations -->
   <script type="text/javascript">
     // Animations initialization
