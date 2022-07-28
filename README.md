@@ -17,3 +17,6 @@ php bin/console doctrine:migrations:migrate
 
 php bin/console make:auth
 /_crée le formulaire d'authentification _/
+
+php bin/console make:crud 
+/* cree une interface crud */
