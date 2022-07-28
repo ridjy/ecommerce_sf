@@ -1,11 +1,84 @@
-{% extends 'base.html.twig' %}
+<!DOCTYPE html>
+<html lang="fr">
 
-{% block title %}New User{% endblock %}
+<head>
+    <title>Login</title>
 
-{% block body %}
-    <h1>Create new User</h1>
+    <!-- Meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    {{ include('user/_form.html.twig') }}
+    <!-- Google fonts -->
+    <link href="//fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300;400;700&display=swap" rel="stylesheet">
 
-    <a href="{{ path('app_user_index') }}">back to list</a>
-{% endblock %}
+    <!-- CSS Stylesheet -->
+    <link rel="stylesheet" href="{{asset('login_form/css/style.css')}}" type="text/css" media="all" />
+
+</head>
+
+<body>
+    <div class="signinform">
+        <h1>MDB</h1>
+        <!-- container -->
+        <div class="container">
+            <!-- main content -->
+            <div class="w3l-form-info">
+                <div class="w3_info">
+                    <h2>S'inscrire</h2>
+                    <form action="#" method="post">
+                        <div class="input-group">
+                            <span><i class="fas fa-user" aria-hidden="true"></i></span>
+                            <input type="text" placeholder="Username" name="username" required="">
+                        </div>
+                        <div class="input-group">
+                            <span><i class="fa fa-envelope" aria-hidden="true"></i></span>
+                            <input type="text" placeholder="Email" name="email" required="">
+                        </div>
+                        <div class="input-group">
+                            <span><i class="fas fa-key" aria-hidden="true"></i></span>
+                            <input type="Password" placeholder="Password" name="password" required="">
+                        </div>                        
+                        <button class="btn btn-primary btn-block" type="submit">S'inscrire</button>
+                    </form>
+                    <p class="continue"><span>ou se connecter avec</span></p>
+                    <div class="social-login">
+                        <a href="#facebook">
+                            <div class="facebook">
+                                <span class="fab fa-facebook-f" aria-hidden="true"></span>
+
+                            </div>
+                        </a>
+                        <a href="#twitter">
+                            <div class="twitter">
+                                <span class="fab fa-twitter" aria-hidden="true"></span>
+                            </div>
+                        </a>
+                        <a href="#google">
+                            <div class="google">
+                                <span class="fab fa-google" aria-hidden="true"></span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- //main content -->
+        </div>
+        <!-- //container -->
+        <!-- footer -->
+        <div class="footer">
+            <p>&copy; 2022 MDB. All Rights Reserved | Design by <a href="https://w3layouts.com/"
+                    target="blank">W3layouts</a></p>
+        </div>
+        <!-- footer -->
+    </div>
+
+    <!-- fontawesome v5-->
+    <script src="{{asset('login_form/js/fontawesome.js')}}"></script>
+
+</body>
+
+</html>
+
+{{ include('user/_form.html.twig') }}
+
