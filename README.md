@@ -29,3 +29,6 @@ le id autoincrement est créer par defaut_/
 //creer getter et setter par namespace
 php bin/console make:entity --regenerate
 /_il faut egalement déclarer le repository dans l'annotation pour pouvoir le générer_/
+
+//install easyadmin
+composer require easycorp/easyadmin-bundle
