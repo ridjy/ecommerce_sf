@@ -45,15 +45,10 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link waves-effect" href="https://mdbootstrap.com/docs/jquery/" target="_blank">About MDB</a>
+                    <a class="nav-link waves-effect" href="#" target="_blank">A propos de MDB</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link waves-effect" href="https://mdbootstrap.com/docs/jquery/getting-started/download/"
-                    target="_blank">Free download</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link waves-effect" href="https://mdbootstrap.com/education/bootstrap/" target="_blank">Free
-                    tutorials</a>
+                    <a class="nav-link waves-effect" href="#" target="_blank">Contact</a>
                 </li>
                 </ul>
 
@@ -63,7 +58,7 @@
                     <a class="nav-link waves-effect">
                     <span class="badge red z-depth-1 mr-1"> 1 </span>
                     <i class="fas fa-shopping-cart"></i>
-                    <span class="clearfix d-none d-sm-inline-block"> Cart </span>
+                    <span class="clearfix d-none d-sm-inline-block"> Panier </span>
                     </a>
                 </li>
                 <li class="nav-item">
@@ -77,10 +72,19 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="https://github.com/mdbootstrap/bootstrap-material-design" class="nav-link border border-light rounded waves-effect"
-                    target="_blank">
-                    <i class="fab fa-github mr-2"></i>MDB GitHub
-                    </a>
+                    {% if app.user is null %} 
+                        <a href="{{path('app_login')}}" class="nav-link border border-light rounded waves-effect">
+                        <i class="fa fa-user mr-2"></i> Se connecter
+                        </a>
+                    {% else %}
+                        <a href="#" class="nav-link border border-light rounded waves-effect dropdown-toggle" data-toggle="dropdown">
+                        <i class="fa fa-user mr-2"></i> {{app.user.username}}
+                        </a>
+                        <div class="dropdown-menu" style="left:auto;">
+                        <a class="dropdown-item" href="#">Mon compte</a>
+                        <a class="dropdown-item" href="#">Mes préférences</a>
+                        </div>
+                    {% endif %}
                 </li>
                 </ul>
 
