@@ -30,5 +30,6 @@ le id autoincrement est créer par defaut_/
 php bin/console make:entity --regenerate
 /_il faut egalement déclarer le repository dans l'annotation pour pouvoir le générer_/
 
-//install easyadmin
+//install easyadmin 3
 composer require easycorp/easyadmin-bundle
+symfony console make:admin:crud
