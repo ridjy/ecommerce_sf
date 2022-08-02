@@ -14,6 +14,8 @@
 
     <!-- CSS Stylesheet -->
     <link rel="stylesheet" href="{{asset('login_form/css/style.css')}}" type="text/css" media="all" />
+    <!-- Bootstrap core CSS -->
+    <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
 
 </head>
 
@@ -34,6 +36,13 @@
                             <div class="mb-3">
                                 You are logged in as {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Logout</a>
                             </div>
+                        {% endif %}
+                        {% if retour != '' %}
+                            <div class="mb-3">
+                                <div class="alert alert-success" role="alert">
+                                    {{retour}}
+                                </div>
+                            </div><br/>
                         {% endif %}
                         <div class="input-group">
                             <span><i class="fas fa-user" aria-hidden="true"></i></span>
