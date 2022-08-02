@@ -116,6 +116,11 @@
             <div class="dropdown-menu" style="left:auto;">
               <a class="dropdown-item" href="#">Mon compte</a>
               <a class="dropdown-item" href="#">Mes préférences</a>
+              {% if is_granted('ROLE_ADMIN') %}
+                <a class="dropdown-item" href="#">Administration</a>
+              {% endif %}
+              
+
             </div>
             {% endif %}
 
