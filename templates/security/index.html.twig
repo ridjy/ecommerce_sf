@@ -14,8 +14,20 @@
 
     <!-- CSS Stylesheet -->
     <link rel="stylesheet" href="{{asset('login_form/css/style.css')}}" type="text/css" media="all" />
-    <!-- Bootstrap core CSS -->
-    <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
+    <style>
+    .alert-success {
+        color: #155724;
+        background-color: #d4edda;
+        border-color: #c3e6cb;
+    }
+    .alert {
+        position: relative;
+        padding: .75rem 1.25rem;
+        margin-bottom: 1rem;
+        border: 1px solid transparent;
+        border-radius: .25rem;
+    }
+    </style>
 
 </head>
 
@@ -42,7 +54,7 @@
                                 <div class="alert alert-success" role="alert">
                                     {{retour}}
                                 </div>
-                            </div><br/>
+                            </div>
                         {% endif %}
                         <div class="input-group">
                             <span><i class="fas fa-user" aria-hidden="true"></i></span>
