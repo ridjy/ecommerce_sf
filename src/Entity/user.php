@@ -3,6 +3,9 @@
 namespace App\Entity;
 
 use App\Repository\UserRepository;
+use App\Entity\CodePromo;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
@@ -18,6 +21,12 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      * @ORM\Column(type="integer")
      */
     private $id;
+
+    /**
+     * Un client a potentiellement plusieurs codepromo
+     * @ORM\OneToMany(targetEntity="App\Entity\CodePromo", mappedBy="user")
+     */
+    private $codepromo;
 
     /**
      * @ORM\Column(type="string", length=180, unique=true)
@@ -43,6 +52,10 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function getId(): ?int
     {
         return $this->id;
+    }
+
+    public function __construct() {
+        $this->codepromo = new ArrayCollection();
     }
 
     /**
@@ -132,6 +145,36 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setEmail(string $email): self
     {
         $this->email = $email;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, CodePromo>
+     */
+    public function getCodepromo(): Collection
+    {
+        return $this->codepromo;
+    }
+
+    public function addCodepromo(CodePromo $codepromo): self
+    {
+        if (!$this->codepromo->contains($codepromo)) {
+            $this->codepromo[] = $codepromo;
+            $codepromo->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeCodepromo(CodePromo $codepromo): self
+    {
+        if ($this->codepromo->removeElement($codepromo)) {
+            // set the owning side to null (unless already changed)
+            if ($codepromo->getUser() === $this) {
+                $codepromo->setUser(null);
+            }
+        }
 
         return $this;
     }

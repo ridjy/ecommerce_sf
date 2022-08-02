@@ -13,10 +13,23 @@ php bin/console doctrine:migrations:status
 php bin/console make:migration
 /_creation fichier de la migration dans migrations/ _/
 php bin/console doctrine:migrations:migrate
+php bin/console doctrine:migrations:migrate 'DoctrineMigrations\Version20180605025653'
 /_execute la migration_/
 
 php bin/console make:auth
 /_crée le formulaire d'authentification _/
 
-php bin/console make:crud 
-/* cree une interface crud */
+php bin/console make:crud
+/_ cree une interface crud _/
+
+php bin/console make:entity
+/_creation entite
+le id autoincrement est créer par defaut_/
+
+//creer getter et setter par namespace
+php bin/console make:entity --regenerate
+/_il faut egalement déclarer le repository dans l'annotation pour pouvoir le générer_/
+
+//install easyadmin 3
+composer require easycorp/easyadmin-bundle
+symfony console make:admin:crud
