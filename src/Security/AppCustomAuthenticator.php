@@ -1,5 +1,5 @@
 <?php
-
+/**la méthode d'authentification */
 namespace App\Security;
 
 use Symfony\Component\HttpFoundation\RedirectResponse;
@@ -14,6 +14,7 @@ use Symfony\Component\Security\Http\Authenticator\Passport\Badge\UserBadge;
 use Symfony\Component\Security\Http\Authenticator\Passport\Credentials\PasswordCredentials;
 use Symfony\Component\Security\Http\Authenticator\Passport\Passport;
 use Symfony\Component\Security\Http\Util\TargetPathTrait;
+use Symfony\Component\HttpFoundation\Cookie;
 
 class AppCustomAuthenticator extends AbstractLoginFormAuthenticator
 {
@@ -28,16 +29,12 @@ class AppCustomAuthenticator extends AbstractLoginFormAuthenticator
         $this->urlGenerator = $urlGenerator;
     }
 
+    //rentre ici lors de l'authentification
     public function authenticate(Request $request): Passport
     {
         $username = $request->request->get('username', '');
 
         $request->getSession()->set(Security::LAST_USERNAME, $username);
-
-        /*if($request->request->get('remenber')=='remember') {
-            setcookie('username',$user->getUsername(),time()+365*24*3600,null,null,false,true);
-            setcookie('password',$user->getPassword(),time()+365*24*3600,null,null,false,true);
-        }*/
 
         return new Passport(
             new UserBadge($username),
@@ -51,11 +48,23 @@ class AppCustomAuthenticator extends AbstractLoginFormAuthenticator
     public function onAuthenticationSuccess(Request $request, TokenInterface $token, string $firewallName): ?Response
     {
         if ($targetPath = $this->getTargetPath($request->getSession(), $firewallName)) {
-            return new RedirectResponse($targetPath);
+            $response = new RedirectResponse($targetPath);
+        } else {
+            $response = new RedirectResponse($this->urlGenerator->generate('app_home'));
         }
 
-        return new RedirectResponse($this->urlGenerator->generate('app_home'));
-        //throw new \Exception('TODO: provide a valid redirect inside '.__FILE__);
+        
+        if($request->request->get('remenber')=='remenber') 
+        {
+            
+            $cookieUser = new Cookie('username', $request->request->get('username', '') ,time() + (365 * 24 * 60 * 60));
+            $cookiePasswords = new Cookie('password', $request->request->get('password', '') ,time() + (365 * 24 * 60 * 60));
+            $response->headers->setCookie($cookieUser);
+            $response->headers->setCookie($cookiePasswords);
+            $response->sendHeaders();
+        }
+        
+        return $response;
     }
 
     protected function getLoginUrl(Request $request): string
