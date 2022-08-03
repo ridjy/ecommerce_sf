@@ -13,7 +13,7 @@ php bin/console doctrine:migrations:status
 php bin/console make:migration
 /_creation fichier de la migration dans migrations/ _/
 php bin/console doctrine:migrations:migrate
-php bin/console doctrine:migrations:migrate 'DoctrineMigrations\Version20180605025653'
+php bin/console doctrine:migrations:migrate DoctrineMigrations\Version20180605025653
 /_execute la migration_/
 
 php bin/console make:auth
