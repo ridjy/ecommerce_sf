@@ -41,7 +41,6 @@ class UserController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) 
         {
             $user->setPassword($passwordEncoder->encodePassword($user, $user->getPassword()));
-
             $userRepository->add($user, true);
 
             return $this->redirectToRoute('app_login', array('msg'=>'1'), Response::HTTP_SEE_OTHER);

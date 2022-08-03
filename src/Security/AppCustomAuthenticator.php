@@ -34,6 +34,11 @@ class AppCustomAuthenticator extends AbstractLoginFormAuthenticator
 
         $request->getSession()->set(Security::LAST_USERNAME, $username);
 
+        /*if($request->request->get('remenber')=='remember') {
+            setcookie('username',$user->getUsername(),time()+365*24*3600,null,null,false,true);
+            setcookie('password',$user->getPassword(),time()+365*24*3600,null,null,false,true);
+        }*/
+
         return new Passport(
             new UserBadge($username),
             new PasswordCredentials($request->request->get('password', '')),
