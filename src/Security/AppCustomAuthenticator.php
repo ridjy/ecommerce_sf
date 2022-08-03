@@ -15,6 +15,7 @@ use Symfony\Component\Security\Http\Authenticator\Passport\Credentials\PasswordC
 use Symfony\Component\Security\Http\Authenticator\Passport\Passport;
 use Symfony\Component\Security\Http\Util\TargetPathTrait;
 use Symfony\Component\HttpFoundation\Cookie;
+use Symfony\Component\Security\Http\Authenticator\Passport\Badge\RememberMeBadge;
 
 class AppCustomAuthenticator extends AbstractLoginFormAuthenticator
 {
@@ -40,6 +41,7 @@ class AppCustomAuthenticator extends AbstractLoginFormAuthenticator
             new UserBadge($username),
             new PasswordCredentials($request->request->get('password', '')),
             [
+                new RememberMeBadge(),
                 new CsrfTokenBadge('authenticate', $request->request->get('_csrf_token')),
             ]
         );
@@ -53,8 +55,8 @@ class AppCustomAuthenticator extends AbstractLoginFormAuthenticator
             $response = new RedirectResponse($this->urlGenerator->generate('app_home'));
         }
 
-        
-        if($request->request->get('remenber')=='remenber') 
+        //si cookie manuelle
+        /*if($request->request->get('remenber')=='remenber') 
         {
             
             $cookieUser = new Cookie('username', $request->request->get('username', '') ,time() + (365 * 24 * 60 * 60));
@@ -62,7 +64,7 @@ class AppCustomAuthenticator extends AbstractLoginFormAuthenticator
             $response->headers->setCookie($cookieUser);
             $response->headers->setCookie($cookiePasswords);
             $response->sendHeaders();
-        }
+        }*/
         
         return $response;
     }
