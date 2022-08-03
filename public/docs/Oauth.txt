@@ -1,0 +1,5 @@
+https://github.com/hwi/HWIOAuthBundle/blob/1.4/Resources/doc/1-setting_up_the_bundle.md
+
+/*installation login via FB et Google*/
+
+https://github.com/hwi/HWIOAuthBundle/issues/1624
