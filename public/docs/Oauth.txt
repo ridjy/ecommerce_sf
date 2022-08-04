@@ -4,4 +4,5 @@ https://github.com/hwi/HWIOAuthBundle/blob/1.4/Resources/doc/1-setting_up_the_bu
 
 https://github.com/hwi/HWIOAuthBundle/issues/1624
 
-//en cours 
+//en cours
+//mofifié sur github
