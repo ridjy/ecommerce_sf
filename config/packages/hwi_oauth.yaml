@@ -14,7 +14,7 @@ hwi_oauth:
         csrf: true
     google:
       type: google
-      client_id: <client_id>
-      client_secret: <client_secret>
+      client_id: 614795717832-t7ch0vm7bh4aq5od1u2d7sgeb2prg4e6.apps.googleusercontent.com
+      client_secret: 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
       options:
         access_type: offline
