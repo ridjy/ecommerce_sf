@@ -53,7 +53,8 @@ security:
         oauth_user_provider:
           orm:
             class: App\Entity\User
-            properties: [email]
+            properties: 
+              google: username 
 
       # activate different ways to authenticate
       # https://symfony.com/doc/current/security.html#the-firewall
