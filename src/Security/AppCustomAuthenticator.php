@@ -16,6 +16,7 @@ use Symfony\Component\Security\Http\Authenticator\Passport\Passport;
 use Symfony\Component\Security\Http\Util\TargetPathTrait;
 use Symfony\Component\HttpFoundation\Cookie;
 use Symfony\Component\Security\Http\Authenticator\Passport\Badge\RememberMeBadge;
+use HWI\Bundle\OAuthBundle\Security\Core\User\OAuthAwareUserProviderInterface;
 
 class AppCustomAuthenticator extends AbstractLoginFormAuthenticator
 {

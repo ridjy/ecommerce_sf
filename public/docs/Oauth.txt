@@ -5,4 +5,11 @@ https://github.com/hwi/HWIOAuthBundle/blob/1.4/Resources/doc/1-setting_up_the_bu
 https://github.com/hwi/HWIOAuthBundle/issues/1624
 
 //en cours
-//mofifié sur github
+
+1)
+composer require hwi/oauth-bundle symfony/http-client nyholm/psr7 guzzlehttp/promises php-http/httplug-bundle
+
+2)oauth_user_provider:
+          service: hwi_oauth.user.provider.entity
+
+gerer le retour

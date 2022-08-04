@@ -49,6 +49,11 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      */
     private $email;
 
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $google;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -175,6 +180,18 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
                 $codepromo->setUser(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getGoogle(): ?string
+    {
+        return $this->google;
+    }
+
+    public function setGoogle(?string $google): self
+    {
+        $this->google = $google;
 
         return $this;
     }
