@@ -33,3 +33,6 @@ php bin/console make:entity --regenerate
 //install easyadmin 3
 composer require easycorp/easyadmin-bundle
 symfony console make:admin:crud
+
+//lister les services disponibles dans le conteneur de services
+php bin/console debug:autowiring

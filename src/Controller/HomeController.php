@@ -19,11 +19,11 @@ class HomeController extends AbstractController
     }
 
     /**
-     * @Route("/register", name="app_register")
+     * @Route("/contact", name="app_contact")
      */
     public function register(): Response
     {
-        return $this->render('home/registration.html.twig', [
+        return $this->render('home/contact.html.twig', [
             'controller_name' => 'HomeController',
         ]);
     }
