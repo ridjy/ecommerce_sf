@@ -73,9 +73,17 @@
               </div>
 
               <div class="custom-control custom-checkbox">
-                <input type="checkbox" class="custom-control-input" id="same-address" name="newsletter">
+                <input type="checkbox" class="custom-control-input" id="same-address" name="newsletter" value='abonne'>
                 <label class="custom-control-label" for="same-address">S'abonner à la newsletter</label>
               </div>
+
+            {% for message in app.flashes('success') %}
+            <div class="md-form mb-5">
+                <div class="alert alert-success">
+                    {{ message }}
+                </div>
+            </div>
+            {% endfor %}
 
               <hr>
               <button class="btn btn-primary btn-lg btn-block" type="submit">Envoyer mon message</button>

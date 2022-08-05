@@ -7,6 +7,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Mime\Email;
 use Symfony\Component\Mailer\MailerInterface;
+use App\Entity\NewsLetter;
 
 class HomeController extends AbstractController
 {
@@ -35,31 +36,33 @@ class HomeController extends AbstractController
      */
     public function contactSend(Request $request, MailerInterface $mailer)
     {
-        $form = $this->createForm(ContactType::class);
-        $form->handleRequest($request);
+        if($request->request->get('newsletter') == 'abonne')
+        {
+            $o_newsletterSaved = $this->getDoctrine()->getRepository(NewsLetter::class)->findOneBy(array('nom' => $request->request->get('email')));
+            if ($o_newsletterSaved==NULL)
+            {
+                $o_newsletter = new NewsLetter();
+                $o_newsletter->setNomComplet($request->request->get('nom').' '.$request->request->get('prenom'));
+                $o_newsletter->setEmail($request->request->get('email'));
+                $o_newsletter->setDateAbonnement(new \DateTime());
+                $o_newsletter->setMailsRecu(1);
+                $this->getDoctrine()->getManager()->persist($o_newsletter);
+                $this->getDoctrine()->getManager()->flush();
+            }
+        }//endif s'abonner
 
+        $message = (new Email())
+            ->from('rijanavalona.rakotomalala@gmail.com')
+            ->to($request->request->get('email'))
+            ->subject('Vous avez reçu unn email')
+            ->text('Sender : Application MDB Symfony'.\PHP_EOL.
+            $request->request->get('message'),
+                'text/plain');
+        $mailer->send($message);
 
-        if($form->isSubmitted() && $form->isValid()) {
+        $this->addFlash('success', 'Vore message a été envoyé');
 
-            $contactFormData = $form->getData();
-            
-            $message = (new Email())
-                ->from($contactFormData['email'])
-                ->to('ton@gmail.com')
-                ->subject('vous avez reçu unn email')
-                ->text('Sender : '.$contactFormData['email'].\PHP_EOL.
-                    $contactFormData['Message'],
-                    'text/plain');
-            $mailer->send($message);
-
-            $this->addFlash('success', 'Vore message a été envoyé');
-
-            return $this->redirectToRoute('contact');
-        }
-
-        return $this->render('contact/index.html.twig', [
-            'form' => $form->createView()
-        ]);
+        return $this->redirectToRoute('app_contact');
     }
 
     /**
