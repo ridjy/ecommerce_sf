@@ -14,17 +14,21 @@ config\bundles.php
 4)ajout des routes du bundle 
 config\routes.yaml
 
-5)configuration des services d'authentification externe 
+5)configuration des services d'authentification externe (pour chaque service google, fb,.....) 
 config\packages\hwi_oauth.yaml
 
 voir la doc dev pour les identifiants secrètes 
 ex : google ci-dessous
 https://console.cloud.google.com/apis/credentials?project=ecommercesf
 creer des cles d'API sur google developpeur
+https://developers.facebook.com/apps/427095729440722/settings/basic/
+pour facebook cle d'api ci dessus
 
-6)
+fb a tester
+https://github.com/hwi/HWIOAuthBundle/blob/1.4/Resources/doc/bonus/facebook-connect.md
 
-2)oauth_user_provider:
+6)mettre les routes de login pour chaque ressource dans
+app/config/security.yml
+
+oauth_user_provider:
           service: hwi_oauth.user.provider.entity
-
-gerer le retour

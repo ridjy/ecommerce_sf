@@ -6,8 +6,8 @@ hwi_oauth:
   resource_owners:
     facebook:
       type: facebook
-      client_id: "%env(FB_ID)%"
-      client_secret: "%env(FB_SECRET)%"
+      client_id: "427095729440722%"
+      client_secret: "363dc94d05916d4330b6a2b0c4f31de5"
       scope: "email"
       options:
         display: popup
