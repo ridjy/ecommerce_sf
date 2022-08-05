@@ -5,6 +5,8 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Mime\Email;
+use Symfony\Component\Mailer\MailerInterface;
 
 class HomeController extends AbstractController
 {
@@ -21,10 +23,42 @@ class HomeController extends AbstractController
     /**
      * @Route("/contact", name="app_contact")
      */
-    public function register(): Response
+    public function contact(): Response
     {
         return $this->render('home/contact.html.twig', [
             'controller_name' => 'HomeController',
+        ]);
+    }
+
+    /**
+     * @Route("/contact/send", name="app_contact_send")
+     */
+    public function contactSend(Request $request, MailerInterface $mailer)
+    {
+        $form = $this->createForm(ContactType::class);
+        $form->handleRequest($request);
+
+
+        if($form->isSubmitted() && $form->isValid()) {
+
+            $contactFormData = $form->getData();
+            
+            $message = (new Email())
+                ->from($contactFormData['email'])
+                ->to('ton@gmail.com')
+                ->subject('vous avez reçu unn email')
+                ->text('Sender : '.$contactFormData['email'].\PHP_EOL.
+                    $contactFormData['Message'],
+                    'text/plain');
+            $mailer->send($message);
+
+            $this->addFlash('success', 'Vore message a été envoyé');
+
+            return $this->redirectToRoute('contact');
+        }
+
+        return $this->render('contact/index.html.twig', [
+            'form' => $form->createView()
         ]);
     }
 

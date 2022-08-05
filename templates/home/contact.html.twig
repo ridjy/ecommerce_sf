@@ -21,7 +21,7 @@
           <div class="card">
 
             <!--Card content-->
-            <form class="card-body">
+            <form class="card-body" method="POST" action="{{path('app_contact_send')}}">
 
               <!--Grid row-->
               <div class="row">
@@ -31,8 +31,8 @@
 
                   <!--firstName-->
                   <div class="md-form ">
-                    <input type="text" id="firstName" class="form-control">
-                    <label for="firstName" class="">First name</label>
+                    <input type="text" id="firstName" class="form-control" name="nom">
+                    <label for="firstName" class="">Nom</label>
                   </div>
 
                 </div>
@@ -43,8 +43,8 @@
 
                   <!--lastName-->
                   <div class="md-form">
-                    <input type="text" id="lastName" class="form-control">
-                    <label for="lastName" class="">Last name</label>
+                    <input type="text" id="lastName" class="form-control" name="prenom">
+                    <label for="lastName" class="">Prénom</label>
                   </div>
 
                 </div>
@@ -55,13 +55,13 @@
 
               <!--email-->
               <div class="md-form mb-5">
-                <input type="text" id="email" class="form-control" placeholder="youremail@example.com">
+                <input type="text" id="email" class="form-control" placeholder="youremail@example.com" name="email">
                 <label for="email" class="">Email</label>
               </div>
 
               <!--address-->
               <div class="md-form mb-5">
-                <input type="text" id="address" class="form-control" placeholder="1234 Main St">
+                <input type="text" id="address" class="form-control" placeholder="1234 Main St" name="adresse">
                 <label for="address" class="">Addresse (optionnel)</label>
               </div>
 
@@ -69,11 +69,11 @@
 
               <!--address-->
               <div class="md-form mb-5">
-                <textarea id="message" class="form-control" placeholder="Votre message" rows="4"></textarea>
+                <textarea id="message" class="form-control" placeholder="Votre message" rows="4" name="message"></textarea>
               </div>
 
               <div class="custom-control custom-checkbox">
-                <input type="checkbox" class="custom-control-input" id="same-address">
+                <input type="checkbox" class="custom-control-input" id="same-address" name="newsletter">
                 <label class="custom-control-label" for="same-address">S'abonner à la newsletter</label>
               </div>
 

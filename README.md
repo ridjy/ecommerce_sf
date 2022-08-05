@@ -36,3 +36,7 @@ symfony console make:admin:crud
 
 //lister les services disponibles dans le conteneur de services
 php bin/console debug:autowiring
+
+//envoi mail sous symfony
+composer require symfony/mailer
+modifier le .env pour le param smtp sous MAILERDSN
