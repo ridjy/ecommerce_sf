@@ -2,15 +2,27 @@ https://github.com/hwi/HWIOAuthBundle/blob/1.4/Resources/doc/1-setting_up_the_bu
 
 /*installation login via FB et Google*/
 
-https://github.com/hwi/HWIOAuthBundle/issues/1624
-
-//en cours
-
-1)
+1)installation du bundle 
 composer require hwi/oauth-bundle symfony/http-client nyholm/psr7 guzzlehttp/promises php-http/httplug-bundle
 
+2)l'erreur sur install bundle est corrigé ici
+https://github.com/hwi/HWIOAuthBundle/issues/1624
+
+3)ajouter le bundle au kernel 
+config\bundles.php
+
+4)ajout des routes du bundle 
+config\routes.yaml
+
+5)configuration des services d'authentification externe 
+config\packages\hwi_oauth.yaml
+
+voir la doc dev pour les identifiants secrètes 
+ex : google ci-dessous
 https://console.cloud.google.com/apis/credentials?project=ecommercesf
 creer des cles d'API sur google developpeur
+
+6)
 
 2)oauth_user_provider:
           service: hwi_oauth.user.provider.entity
