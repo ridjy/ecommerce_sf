@@ -18,7 +18,7 @@ class HomeController extends AbstractController
     public function index(): Response
     {
         return $this->render('home/home.html.twig', [
-            'controller_name' => 'HomeController',
+            'menu' => 'home',
         ]);
     }
 
@@ -28,7 +28,7 @@ class HomeController extends AbstractController
     public function contact(): Response
     {
         return $this->render('home/contact.html.twig', [
-            'controller_name' => 'HomeController',
+            'menu' => 'contact',
         ]);
     }
 

@@ -39,9 +39,11 @@
 
                 <!-- Left -->
                 <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link waves-effect" href="#">Home
+                <li class="nav-item {% if menu == 'home' %}active{% endif %}">
+                    <a class="nav-link waves-effect" href="{{ (menu == 'home') ? '#' : path('app_home') }}">Accueil
+                    {% if menu == 'home' %}
                     <span class="sr-only">(current)</span>
+                    {% endif %}
                     </a>
                 </li>
                 <li class="nav-item">
@@ -50,8 +52,12 @@
                 <li class="nav-item">
                     <a class="nav-link waves-effect" href="#" target="_blank">Blog</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link waves-effect" href="{{path('app_contact')}}">Contact</a>
+                <li class="nav-item {% if menu == 'contact' %}active{% endif %}">
+                    <a class="nav-link waves-effect" href="{{ (menu == 'contact') ? '#' : path('app_contact') }}">Contact
+                    {% if menu == 'contact' %}
+                    <span class="sr-only">(current)</span>
+                    {% endif %}
+                    </a>
                 </li>
                 </ul>
 
