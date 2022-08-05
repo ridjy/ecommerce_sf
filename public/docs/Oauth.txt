@@ -9,6 +9,9 @@ https://github.com/hwi/HWIOAuthBundle/issues/1624
 1)
 composer require hwi/oauth-bundle symfony/http-client nyholm/psr7 guzzlehttp/promises php-http/httplug-bundle
 
+https://console.cloud.google.com/apis/credentials?project=ecommercesf
+creer des cles d'API sur google developpeur
+
 2)oauth_user_provider:
           service: hwi_oauth.user.provider.entity
 
