@@ -8,6 +8,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Mime\Email;
 use Symfony\Component\Mailer\MailerInterface;
 use App\Entity\NewsLetter;
+use Symfony\Component\HttpFoundation\Request;
 
 class HomeController extends AbstractController
 {
@@ -38,7 +39,7 @@ class HomeController extends AbstractController
     {
         if($request->request->get('newsletter') == 'abonne')
         {
-            $o_newsletterSaved = $this->getDoctrine()->getRepository(NewsLetter::class)->findOneBy(array('nom' => $request->request->get('email')));
+            $o_newsletterSaved = $this->getDoctrine()->getRepository(NewsLetter::class)->findOneBy(array('email' => $request->request->get('email')));
             if ($o_newsletterSaved==NULL)
             {
                 $o_newsletter = new NewsLetter();
@@ -52,8 +53,8 @@ class HomeController extends AbstractController
         }//endif s'abonner
 
         $message = (new Email())
-            ->from('rijanavalona.rakotomalala@gmail.com')
-            ->to($request->request->get('email'))
+            ->from($request->request->get('email'))
+            ->to('rijanavalona.rakotomalala@gmail.com')
             ->subject('Vous avez reçu unn email')
             ->text('Sender : Application MDB Symfony'.\PHP_EOL.
             $request->request->get('message'),

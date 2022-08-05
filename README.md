@@ -40,3 +40,5 @@ php bin/console debug:autowiring
 //envoi mail sous symfony
 composer require symfony/mailer
 modifier le .env pour le param smtp sous MAILERDSN
+composer require symfony/google-mailer
+//google mailer pour google
