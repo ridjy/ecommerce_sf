@@ -8,6 +8,7 @@ use Symfony\Component\HttpFoundation\Response;
 use App\Repository\UserRepository;
 use App\Security\Exception\NotVerifiedEmailException;
 use KnpU\OAuth2ClientBundle\Client\ClientRegistry;
+use KnpU\OAuth2ClientBundle\Security\Authenticator\OAuth2Authenticator;
 use KnpU\OAuth2ClientBundle\Client\Provider\GithubClient;
 use KnpU\OAuth2ClientBundle\Security\Authenticator\SocialAuthenticator;
 use League\OAuth2\Client\Provider\GithubResourceOwner;
@@ -21,12 +22,13 @@ use Symfony\Component\Security\Core\User\UserProviderInterface;
 use Symfony\Component\Security\Http\Util\TargetPathTrait;
 use Symfony\Component\Security\Http\Authenticator\AuthenticatorInterface;
 use Symfony\Component\Security\Http\Authenticator\Passport\PassportInterface;
+use Symfony\Component\Security\Http\Authenticator\Passport\SelfValidatingPassport;
 use Symfony\Component\Security\Http\Authenticator\Passport\Passport; 
 use Symfony\Component\Security\Http\Authenticator\Passport\Badge\CsrfTokenBadge;
 use Symfony\Component\Security\Http\Authenticator\Passport\Badge\UserBadge;
 use Symfony\Component\Security\Http\Authenticator\Passport\Credentials\PasswordCredentials;
 
-class GithubAuthenticator implements AuthenticatorInterface
+class GithubAuthenticator extends OAuth2Authenticator implements AuthenticatorInterface
 {
 
     use TargetPathTrait;
@@ -55,58 +57,38 @@ class GithubAuthenticator implements AuthenticatorInterface
         return 'oauth_check' === $request->attributes->get('_route') && $request->get('service') === 'github';
     }
 
-    public function getCredentials(Request $request)
-    {
-        return $this->fetchAccessToken($this->clientRegistry->getClient('github'));
-    }
-
     //rentre ici lors de l'authentification
     public function authenticate(Request $request): Passport
     {
-        $credentials = $this->getCredentials($request);
-        dd($credentials);
-    }
+        $client = $this->clientRegistry->getClient('github');
+        $accessToken = $this->fetchAccessToken($client);
+        return new SelfValidatingPassport(
+            new UserBadge($accessToken->getToken(), function() use ($accessToken, $client) {
+                /** @var GithubUser $githubUser */
+                $githubUser = $client->fetchUserFromToken($accessToken);
 
-    public function createAuthenticatedToken(PassportInterface $passport, string $firewallName) : TokenInterface
-    {
-        dd();
-    }
+                $a_retour = $githubUser->toArray();
+                
+                // 1) have they logged in with Facebook before? Easy!
+                $existingUser = $this->userRepository->findOneBy(['githubId' => $githubUser->getId()]);
 
-    /**
-     * Récupère l'utilisateur à partir du AccessToken
-     * 
-     * @param AccessToken $credentials
-     */
-    public function getUser($credentials, UserProviderInterface $userProvider)
-    {
-        dd($credentials);
-        /** @var GithubResourceOwner $githubUser */
-       /* $githubUser = $this->getClient()->fetchUserFromToken($credentials);
+                if ($existingUser) {
+                    return $existingUser;
+                } else if (isset($a_retour['email']))
+                {
+                    $user = $this->userRepository->findOneBy(['email' => $a_retour['email']]);
+                } else {
+                    $user = new User();
+                    $user->setUsername($a_retour['login']);
+                    $user->setGithubId($githubUser->getId());
+                    $this->entityManager->persist($user);
+                    $this->entityManager->flush();
+                }
 
-        // On récupère l'email de l'utilisateur (spécifique à github)
-        $response = HttpClient::create()->request(
-            'GET',
-            'https://api.github.com/user/emails',
-            [
-                'headers' => [
-                    'authorization' => "token {$credentials->getToken()}"
-                ]
-            ]
+                return $user;
+            })
         );
-        $emails = json_decode($response->getContent(), true);
-        foreach($emails as $email) {
-            if ($email['primary'] === true && $email['verified'] === true) {
-                $data = $githubUser->toArray();
-                $data['email'] = $email['email'];
-                $githubUser = new GithubResourceOwner($data);
-            }
-        }
 
-        if ($githubUser->getEmail() === null) {
-            throw new NotVerifiedEmailException();
-        }
-
-        return $this->userRepository->findOrCreateFromGithubOauth($githubUser);*/
     }
 
     public function onAuthenticationFailure(Request $request, AuthenticationException $exception) : ?Response
@@ -124,7 +106,7 @@ class GithubAuthenticator implements AuthenticatorInterface
         return new RedirectResponse($targetPath ?: '/');
     }
 
-    private function getClient (): GithubClient {
+    private function getClient(): GithubClient {
         return $this->clientRegistry->getClient('github');
     }
 }
