@@ -40,19 +40,19 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     /**
      * @var string The hashed password
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="string", nullable=true)
      */
     private $password;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $email;
 
     /**
-     * @ORM\Column(type="text", nullable=true)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $google;
+    private $googleId;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
@@ -189,18 +189,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this;
     }
 
-    public function getGoogle(): ?string
-    {
-        return $this->google;
-    }
-
-    public function setGoogle(?string $google): self
-    {
-        $this->google = $google;
-
-        return $this;
-    }
-
     public function getGithubId(): ?string
     {
         return $this->githubId;
@@ -209,6 +197,18 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setGithubId(?string $githubId): self
     {
         $this->githubId = $githubId;
+
+        return $this;
+    }
+
+    public function getGoogleId(): ?string
+    {
+        return $this->googleId;
+    }
+
+    public function setGoogleId(?string $googleId): self
+    {
+        $this->googleId = $googleId;
 
         return $this;
     }
