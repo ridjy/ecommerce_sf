@@ -33,6 +33,7 @@ security:
       custom_authenticators:
         - App\Security\AppCustomAuthenticator
         - App\Security\GithubAuthenticator
+        - App\Security\GoogleAuthenticator
       logout:
         path: app_logout
         # where to redirect after logout
