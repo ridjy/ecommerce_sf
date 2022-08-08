@@ -27,8 +27,12 @@ pour facebook cle d'api ci dessus
 fb a tester
 https://github.com/hwi/HWIOAuthBundle/blob/1.4/Resources/doc/bonus/facebook-connect.md
 
+
+STEP 3 : 
 6)mettre les routes de login pour chaque ressource dans
 app/config/security.yml
 
 oauth_user_provider:
           service: hwi_oauth.user.provider.entity
+
+

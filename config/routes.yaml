@@ -13,8 +13,10 @@ hwi_oauth_login:
   resource: "@HWIOAuthBundle/Resources/config/routing/login.xml"
   prefix: /login
 
+#facebook_login:
+#  path: /login/check-facebook
 facebook_login:
-  path: /login/check-facebook
+  path: /demo/secured/login_facebook
 
 google_login:
   path: /login/check-google

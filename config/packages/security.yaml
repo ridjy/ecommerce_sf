@@ -43,7 +43,7 @@ security:
         #always_remember_me: true
       oauth:
         resource_owners:
-          facebook: "/login/check-facebook"
+          facebook: "/demo/secured/login_facebook"
           google: "/login/check-google"
           my_custom_provider: "/login/check-custom"
           my_github: "/login/check-github"
@@ -51,10 +51,7 @@ security:
         use_forward: false
         failure_path: /login
         oauth_user_provider:
-          orm:
-            class: App\Entity\User
-            properties:
-              google: username
+          service: hwi_oauth.user.provider.entity
 
       # activate different ways to authenticate
       # https://symfony.com/doc/current/security.html#the-firewall

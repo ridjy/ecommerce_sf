@@ -78,7 +78,7 @@
                     </form>
                     <p class="continue"><span>ou se connecter avec</span></p>
                     <div class="social-login">
-                        <a href="#facebook">
+                        <a href="#facebook" onclick="fb_login();">
                             <div class="facebook">
                                 <span class="fab fa-facebook-f" aria-hidden="true"></span>
 
@@ -86,7 +86,7 @@
                         </a>
                         <a href="#twitter">
                             <div class="twitter">
-                                <span class="fab fa-twitter" aria-hidden="true"></span>
+                                <span class="fab fa-linkedin" aria-hidden="true"></span>
                             </div>
                         </a>
                         <a href="{{ path('hwi_oauth_service_redirect', {'service': 'google' }) }}">
@@ -101,6 +101,8 @@
             <!-- //main content -->
         </div>
         <!-- //container -->
+        {# Bonus: Show all available login link in HWIOAuthBundle #}
+
         <!-- footer -->
         <div class="footer">
             <p>&copy; 2022 MDB. All Rights Reserved | Design by <a href="https://w3layouts.com/"
@@ -111,6 +113,46 @@
 
     <!-- fontawesome v5-->
     <script src="{{asset('login_form/js/fontawesome.js')}}"></script>
+
+     <script>
+        window.fbAsyncInit = function() {
+            // init the FB JS SDK
+            FB.init({
+                appId      : '427095729440722%',                        // App ID from the app dashboard
+                channelUrl : 'https://test1',      // Channel file for x-domain comms
+                status     : true,                                 // Check Facebook Login status
+                xfbml      : true                                  // Look for social plugins on the page
+            });
+        };
+
+        // Load the SDK asynchronously
+        (function(d, s, id){
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) {return;}
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_US/all.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+
+        function fb_login() {
+            FB.getLoginStatus(function(response) {
+                if (response.status === 'connected') {
+                    // connected
+                    alert('Already connected, redirect to login page to create token.');
+                    document.location = "{{ url("hwi_oauth_service_redirect", {service: "facebook"}) }}";
+                } else {
+                    // not_authorized
+                    FB.login(function(response) {
+                        if (response.authResponse) {
+                            document.location = "{{ url("hwi_oauth_service_redirect", {service: "facebook"}) }}";
+                        } else {
+                            alert('Cancelled.');
+                        }
+                    }, {scope: 'email'});
+                }
+            });
+        }
+    </script>
 
 </body>
 

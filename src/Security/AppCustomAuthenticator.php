@@ -62,6 +62,9 @@ class AppCustomAuthenticator extends AbstractLoginFormAuthenticator
     //rentre ici lors de l'authentification
     public function authenticate(Request $request): Passport
     {
+
+        dd($request);
+        
         $username = $request->request->get('username', '');
 
         $request->getSession()->set(Security::LAST_USERNAME, $username);

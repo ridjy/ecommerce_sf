@@ -18,3 +18,7 @@ hwi_oauth:
       client_secret: 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
       options:
         access_type: offline
+
+services:
+  hwi_oauth.user.provider.entity:
+    class: HWI\Bundle\OAuthBundle\Security\Core\User\OAuthUserProvider
