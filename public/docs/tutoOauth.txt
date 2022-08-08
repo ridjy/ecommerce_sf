@@ -1,6 +1,8 @@
 ngrok : creer une url specifique de redirectio
 car fb ou autre n'autorisent pas localhost
 
+https://github.com/thephpleague/oauth2-github
+
 1) creer les cles api id et secret de l'application 
 url callback l'url qui traitera les informations depuis le retour du reseau social 
 
@@ -11,3 +13,18 @@ ajouter un champ githubId dans entity user
 
 3) le bundle 
 composer require knpuniversity/oauth2-client-bundle
+
+dependance supplémentaire 
+
+4)configuration
+config\packages\knpu_oauth2_client.yaml
+
+creation du route pour le traitement du retour dans routes.yaml
+
+5) voir les scope 
+les inforamtions sur l'user que vous voulez utiliser
+
+6) creer une authenticateur par service
+ici pour github par exemple
+
+

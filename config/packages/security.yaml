@@ -29,7 +29,10 @@ security:
     main:
       lazy: true
       provider: database_users
-      custom_authenticator: App\Security\AppCustomAuthenticator
+      entry_point: App\Security\AppCustomAuthenticator
+      custom_authenticators:
+        - App\Security\AppCustomAuthenticator
+        - App\Security\GithubAuthenticator
       logout:
         path: app_logout
         # where to redirect after logout

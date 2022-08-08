@@ -7,6 +7,8 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
+use KnpU\OAuth2ClientBundle\Client\ClientRegistry;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 
 class SecurityController extends AbstractController
 {
@@ -31,6 +33,16 @@ class SecurityController extends AbstractController
         { $retour = 'inscription effectuée'; }
 
         return $this->render('security/index.html.twig', ['last_username' => $lastUsername, 'error' => $error,'retour'=>$retour]);
+    }
+
+    /**
+     * @Route("/connect/github", name="app_loginGithub")
+     */
+    public function connect(ClientRegistry $clientRegistry) : RedirectResponse
+    {
+        /** @var GithubClient $client */
+        $client = $clientRegistry->getClient('github');
+        return $client->redirect(['read:user', 'user:email']);
     }
 
     /**
