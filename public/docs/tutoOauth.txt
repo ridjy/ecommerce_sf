@@ -1,0 +1,13 @@
+ngrok : creer une url specifique de redirectio
+car fb ou autre n'autorisent pas localhost
+
+1) creer les cles api id et secret de l'application 
+url callback l'url qui traitera les informations depuis le retour du reseau social 
+
+2) creer .env.local
+y mettre le client id et secret de GITHUB
+
+ajouter un champ githubId dans entity user
+
+3) le bundle 
+composer require knpuniversity/oauth2-client-bundle

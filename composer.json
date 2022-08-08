@@ -14,6 +14,7 @@
         "easycorp/easyadmin-bundle": "^3.5",
         "guzzlehttp/promises": "^1.5",
         "hwi/oauth-bundle": "^1.4",
+        "knpuniversity/oauth2-client-bundle": "^2.10",
         "nyholm/psr7": "^1.5",
         "php-http/httplug-bundle": "^1.27",
         "phpdocumentor/reflection-docblock": "^5.3",
