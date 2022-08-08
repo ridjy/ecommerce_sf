@@ -17,7 +17,10 @@ use Symfony\Component\Security\Http\Util\TargetPathTrait;
 use Symfony\Component\HttpFoundation\Cookie;
 use Symfony\Component\Security\Http\Authenticator\Passport\Badge\RememberMeBadge;
 use HWI\Bundle\OAuthBundle\Security\Core\User\OAuthAwareUserProviderInterface;
+use App\Repository\UserRepository;
 
+
+//cette calsse AbstractFormLoginAuthenticator dépend du composant guard
 class AppCustomAuthenticator extends AbstractLoginFormAuthenticator
 {
     use TargetPathTrait;
@@ -26,9 +29,34 @@ class AppCustomAuthenticator extends AbstractLoginFormAuthenticator
 
     private UrlGeneratorInterface $urlGenerator;
 
-    public function __construct(UrlGeneratorInterface $urlGenerator)
+    public function __construct(UrlGeneratorInterface $urlGenerator,UserRepository $userRepository)
     {
         $this->urlGenerator = $urlGenerator;
+        $this->userRepository = $userRepository;
+    }
+
+    //condition d'appel de la page de login
+    public function supports(Request $request) : bool
+    {
+        //true si app_login est la route et la requête est post
+        return 'app_login' === $request->attributes->get('_route')
+            && $request->isMethod('POST');
+    }
+
+    //retourne les éléments d'information d'authentification.
+    public function getCredentials(Request $request) 
+    {
+        $credentials = [
+            'username' => $request->request->get('username'),
+            'password' => $request->request->get('password'),
+            'csrf_token' => $request->request->get('_csrf_token'),
+        ];
+        $request->getSession()->set(
+            Security::LAST_USERNAME,
+            $credentials['username']
+        );
+
+        return $credentials;
     }
 
     //rentre ici lors de l'authentification
@@ -39,7 +67,9 @@ class AppCustomAuthenticator extends AbstractLoginFormAuthenticator
         $request->getSession()->set(Security::LAST_USERNAME, $username);
 
         return new Passport(
-            new UserBadge($username),
+            new UserBadge($username, function ($userIdentifier) {
+                return $this->userRepository->findByEmailOrUsername($userIdentifier);
+            }),
             new PasswordCredentials($request->request->get('password', '')),
             [
                 new RememberMeBadge(),
@@ -55,17 +85,6 @@ class AppCustomAuthenticator extends AbstractLoginFormAuthenticator
         } else {
             $response = new RedirectResponse($this->urlGenerator->generate('app_home'));
         }
-
-        //si cookie manuelle
-        /*if($request->request->get('remenber')=='remenber') 
-        {
-            
-            $cookieUser = new Cookie('username', $request->request->get('username', '') ,time() + (365 * 24 * 60 * 60));
-            $cookiePasswords = new Cookie('password', $request->request->get('password', '') ,time() + (365 * 24 * 60 * 60));
-            $response->headers->setCookie($cookieUser);
-            $response->headers->setCookie($cookiePasswords);
-            $response->sendHeaders();
-        }*/
         
         return $response;
     }

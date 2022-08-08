@@ -15,6 +15,7 @@ class SecurityController extends AbstractController
      */
     public function login(AuthenticationUtils $authenticationUtils,Request $request): Response
     {
+        //le service AuthenticationUtils valide l'authentification
         if ($this->getUser()) {
             return $this->redirectToRoute('app_home');
         }
