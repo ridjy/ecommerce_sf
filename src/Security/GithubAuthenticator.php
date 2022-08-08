@@ -5,6 +5,7 @@ namespace App\Security;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use App\Entity\User;
 use App\Repository\UserRepository;
 use App\Security\Exception\NotVerifiedEmailException;
 use KnpU\OAuth2ClientBundle\Client\ClientRegistry;
@@ -27,6 +28,8 @@ use Symfony\Component\Security\Http\Authenticator\Passport\Passport;
 use Symfony\Component\Security\Http\Authenticator\Passport\Badge\CsrfTokenBadge;
 use Symfony\Component\Security\Http\Authenticator\Passport\Badge\UserBadge;
 use Symfony\Component\Security\Http\Authenticator\Passport\Credentials\PasswordCredentials;
+use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 class GithubAuthenticator extends OAuth2Authenticator implements AuthenticatorInterface
 {
@@ -36,12 +39,17 @@ class GithubAuthenticator extends OAuth2Authenticator implements AuthenticatorIn
     private RouterInterface $router;
     private ClientRegistry $clientRegistry;
     private UserRepository $userRepository;
+    private EntityManagerInterface $entityManager;
+    private UserPasswordEncoderInterface $passwordEncoder;
 
-    public function __construct (RouterInterface $router, ClientRegistry $clientRegistry, UserRepository $userRepository) {
+    public function __construct (RouterInterface $router, ClientRegistry $clientRegistry, UserRepository $userRepository, 
+    EntityManagerInterface $entityManager, UserPasswordEncoderInterface $passwordEncoder) {
 
         $this->router = $router;
         $this->clientRegistry = $clientRegistry;
         $this->userRepository = $userRepository;
+        $this->entityManager = $entityManager;
+        $this->passwordEncoder = $passwordEncoder;
     }
 
     public function start(Request $request, AuthenticationException $authException = null)
@@ -81,6 +89,8 @@ class GithubAuthenticator extends OAuth2Authenticator implements AuthenticatorIn
                     $user = new User();
                     $user->setUsername($a_retour['login']);
                     $user->setGithubId($githubUser->getId());
+                    //creer un mdp pour l'user pour pas d'erreur
+                    $user->setPassword($this->passwordEncoder->encodePassword($user, $githubUser->getId()));
                     $this->entityManager->persist($user);
                     $this->entityManager->flush();
                 }
