@@ -31,7 +31,7 @@ use Symfony\Component\Security\Http\Authenticator\Passport\Credentials\PasswordC
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
-class GithubAuthenticator extends OAuth2Authenticator implements AuthenticatorInterface
+class GoogleAuthenticator extends OAuth2Authenticator implements AuthenticatorInterface
 {
 
     use TargetPathTrait;
