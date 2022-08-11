@@ -76,6 +76,21 @@ class SecurityController extends AbstractController
     }
 
     /**
+     * Link to this controller to start the "connect" process
+     *
+     * @Route("/connect/facebook", name="connect_facebook_start")
+     */
+    public function connectFacebook(ClientRegistry $clientRegistry)
+    {
+        // will redirect to Facebook!
+        return $clientRegistry
+            ->getClient('facebook_main') // key used in config/packages/knpu_oauth2_client.yaml
+            ->redirect([
+                'public_profile', 'email' // the scopes you want to access
+            ]);
+    }
+
+    /**
      * @Route("/logout", name="app_logout")
      */
     public function logout(): void

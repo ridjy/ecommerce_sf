@@ -34,6 +34,7 @@ security:
         - App\Security\AppCustomAuthenticator
         - App\Security\GithubAuthenticator
         - App\Security\GoogleAuthenticator
+        - App\Security\FacebookAuthenticator
       logout:
         path: app_logout
         # where to redirect after logout
@@ -47,7 +48,7 @@ security:
         #always_remember_me: true
       oauth:
         resource_owners:
-          facebook: "/demo/secured/login_facebook"
+          facebook: "/login/check_facebook"
           google: "/login/check-google"
           my_custom_provider: "/login/check-custom"
           my_github: "/login/check-github"
