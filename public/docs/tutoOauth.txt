@@ -1,7 +1,7 @@
 ngrok : creer une url specifique de redirectio
 car fb ou autre n'autorisent pas localhost
 
-https://github.com/thephpleague/oauth2-github
+https://github.com/knpuniversity/oauth2-client-bundle
 
 1) creer les cles api id et secret de l'application 
 url callback l'url qui traitera les informations depuis le retour du reseau social 
@@ -31,7 +31,6 @@ ici pour github par exemple
 /************pour google ci-dessous****************/
 
 https://github.com/thephpleague/oauth2-google
-https://www.youtube.com/watch?v=uMWfCeNJQXg
 
 install les bundles 
 cle api google
