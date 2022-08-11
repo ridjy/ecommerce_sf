@@ -55,7 +55,7 @@ class SecurityController extends AbstractController
         return $clientRegistry
             ->getClient('google') // key used in config/packages/knpu_oauth2_client.yaml
             ->redirect([
-                'public_profile', 'email' // the scopes you want to access
+                'openid', 'https://www.googleapis.com/auth/userinfo.email', 'https://www.googleapis.com/auth/userinfo.profile' // the scopes you want to access
             ]);
     }
 
@@ -71,24 +71,8 @@ class SecurityController extends AbstractController
         // ** if you want to *authenticate* the user, then
         // leave this method blank and create a Guard authenticator
         // (read below)
+        //donc redirection vers googlr authentificatour car support renvoi true
 
-        /** @var \KnpU\OAuth2ClientBundle\Client\Provider\Google $client */
-        $client = $clientRegistry->getClient('google');
-
-        try {
-            // the exact class depends on which provider you're using
-            /** @var \League\OAuth2\Client\Provider\FacebookUser $user */
-            $user = $client->fetchUser();
-
-            // do something with all this new power!
-            // e.g. $name = $user->getFirstName();
-            var_dump($user); die;
-            // ...
-        } catch (IdentityProviderException $e) {
-            // something went wrong!
-            // probably you should return the reason to the user
-            var_dump($e->getMessage()); die;
-        }
     }
 
     /**

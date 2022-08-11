@@ -82,9 +82,10 @@ class GithubAuthenticator extends OAuth2Authenticator implements AuthenticatorIn
 
                 if ($existingUser) {
                     return $existingUser;
-                } else if (isset($a_retour['email']))
+                } 
+                if (isset($a_retour['email']) && $user = $this->userRepository->findOneBy(['email' => $a_retour['email']]))
                 {
-                    $user = $this->userRepository->findOneBy(['email' => $a_retour['email']]);
+                    return $user;
                 } else {
                     $user = new User();
                     $user->setUsername($a_retour['login']);

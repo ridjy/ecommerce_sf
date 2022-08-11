@@ -44,3 +44,11 @@ http://localhost:8000/login/check-google
 8) creation route de retour 
 oauth_check pour github va dans le controller par defaut 
 visible sur route.yaml
+
+
+fichier à voir 
+config\routes.yaml => routes de redirection 
+src\Controller\SecurityController.php => controller pour appel google et gerer redirection 
+config\packages\knpu_oauth2_client.yaml => configuration 
+templates\security\index.html.twig => appel lien google
+src\Security\GoogleAuthenticator.php => va géger les retours apres authentification google

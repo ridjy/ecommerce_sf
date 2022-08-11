@@ -30,6 +30,7 @@ use Symfony\Component\Security\Http\Authenticator\Passport\Badge\UserBadge;
 use Symfony\Component\Security\Http\Authenticator\Passport\Credentials\PasswordCredentials;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
+use League\OAuth2\Client\Provider\Google;
 
 class GoogleAuthenticator extends OAuth2Authenticator implements AuthenticatorInterface
 {
@@ -43,8 +44,8 @@ class GoogleAuthenticator extends OAuth2Authenticator implements AuthenticatorIn
     private UserPasswordEncoderInterface $passwordEncoder;
 
     public function __construct (RouterInterface $router, ClientRegistry $clientRegistry, UserRepository $userRepository, 
-    EntityManagerInterface $entityManager, UserPasswordEncoderInterface $passwordEncoder) {
-
+    EntityManagerInterface $entityManager, UserPasswordEncoderInterface $passwordEncoder) 
+    {
         $this->router = $router;
         $this->clientRegistry = $clientRegistry;
         $this->userRepository = $userRepository;
@@ -62,35 +63,37 @@ class GoogleAuthenticator extends OAuth2Authenticator implements AuthenticatorIn
     **/
     public function supports(Request $request) : bool
     {
-        return 'oauth_check' === $request->attributes->get('_route') && $request->get('service') === 'github';
+        return 'connect_google_check' === $request->attributes->get('_route') && $request->get('service') === 'google';
     }
 
     //rentre ici lors de l'authentification
     public function authenticate(Request $request): Passport
     {
-        $client = $this->clientRegistry->getClient('github');
+        $client = $this->clientRegistry->getClient('google');
         $accessToken = $this->fetchAccessToken($client);
         return new SelfValidatingPassport(
             new UserBadge($accessToken->getToken(), function() use ($accessToken, $client) {
-                /** @var GithubUser $githubUser */
-                $githubUser = $client->fetchUserFromToken($accessToken);
+                /** @var Google $githubUser */
+                $googleUser = $client->fetchUserFromToken($accessToken);
 
-                $a_retour = $githubUser->toArray();
+                $a_retour = $googleUser->toArray();
                 
                 // 1) have they logged in with Facebook before? Easy!
-                $existingUser = $this->userRepository->findOneBy(['githubId' => $githubUser->getId()]);
+                $existingUser = $this->userRepository->findOneBy(['googleId' => $a_retour['sub'] ]);
 
                 if ($existingUser) {
                     return $existingUser;
-                } else if (isset($a_retour['email']))
+                } 
+                if (isset($a_retour['email']) && $user = $this->userRepository->findOneBy(['email' => $a_retour['email']]))
                 {
-                    $user = $this->userRepository->findOneBy(['email' => $a_retour['email']]);
+                    return $user;
                 } else {
                     $user = new User();
-                    $user->setUsername($a_retour['login']);
-                    $user->setGithubId($githubUser->getId());
+                    $user->setUsername($a_retour['given_name']);
+                    $user->setGoogleId($a_retour['sub']);
+                    $user->setEmail($a_retour['email']);
                     //creer un mdp pour l'user pour pas d'erreur
-                    $user->setPassword($this->passwordEncoder->encodePassword($user, $githubUser->getId()));
+                    $user->setPassword($this->passwordEncoder->encodePassword($user, $a_retour['sub']));
                     $this->entityManager->persist($user);
                     $this->entityManager->flush();
                 }
@@ -112,11 +115,12 @@ class GoogleAuthenticator extends OAuth2Authenticator implements AuthenticatorIn
 
     public function onAuthenticationSuccess(Request $request, TokenInterface $token, string $providerKey) : ?Response
     {
+        //fait qu'après onauthenticate va rediriger ici
         $targetPath = $this->getTargetPath($request->getSession(), $providerKey);
         return new RedirectResponse($targetPath ?: '/');
     }
 
-    private function getClient(): GithubClient {
-        return $this->clientRegistry->getClient('github');
+    private function getClient(): GoogleClient {
+        return $this->clientRegistry->getClient('google');
     }
 }
