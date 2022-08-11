@@ -27,5 +27,14 @@ les inforamtions sur l'user que vous voulez utiliser
 6) creer une authenticateur par service
 ici pour github par exemple
 
-https://github.com/thephpleague/oauth2-google
 
+/************pour google ci-dessous****************/
+
+https://github.com/thephpleague/oauth2-google
+https://www.youtube.com/watch?v=uMWfCeNJQXg
+
+install les bundles 
+cle api google
+
+uri redirection autorisé 
+http://localhost:8000/login/check-google

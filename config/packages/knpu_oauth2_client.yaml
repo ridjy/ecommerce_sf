@@ -14,6 +14,6 @@ knpu_oauth2_client:
       client_secret: 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
       options:
         access_type: offline
-      redirect_route: oauth_check
+      redirect_route: oauth_check_google
       redirect_params:
         service: google
