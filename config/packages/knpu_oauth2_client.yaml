@@ -13,6 +13,6 @@ knpu_oauth2_client:
       client_id: 614795717832-t7ch0vm7bh4aq5od1u2d7sgeb2prg4e6.apps.googleusercontent.com
       client_secret: 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
       access_type: offline
-      redirect_route: oauth_check
+      redirect_route: connect_google_check
       redirect_params:
         service: google

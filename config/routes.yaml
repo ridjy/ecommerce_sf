@@ -18,9 +18,6 @@ hwi_oauth_login:
 facebook_login:
   path: /demo/secured/login_facebook
 
-google_login:
-  path: /login/check-google
-
 custom_login:
   path: /login/check-custom
 

@@ -38,3 +38,9 @@ cle api google
 
 uri redirection autorisé 
 http://localhost:8000/login/check-google
+
+7) creation de la route dans le controller
+
+8) creation route de retour 
+oauth_check pour github va dans le controller par defaut 
+visible sur route.yaml
