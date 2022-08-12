@@ -52,6 +52,14 @@ class Produit
      */
     private $stock;
 
+    /**
+     * @ORM\Column(type="string")
+     *
+     * @Assert\NotBlank(message="Ajouter une image jpg")
+     * @Assert\File(mimeTypes={ "image/jpeg" })
+     */
+    private $image;
+
     public function __construct()
     {
         $this->categorie = new ArrayCollection();
@@ -142,6 +150,18 @@ class Produit
     public function removeCategorie(Categorie $categorie): self
     {
         $this->categorie->removeElement($categorie);
+
+        return $this;
+    }
+
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    public function setImage($image)
+    {
+        $this->image = $image;
 
         return $this;
     }
