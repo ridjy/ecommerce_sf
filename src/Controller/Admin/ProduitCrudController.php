@@ -12,6 +12,15 @@ class ProduitCrudController extends AbstractCrudController
         return Produit::class;
     }
 
+    /*public function configureCrud(Crud $crud): Crud
+    {
+        return $crud
+            ->setEntityLabelInSingular('Conference Comment')
+            ->setEntityLabelInPlural('Conference Comments')
+            ->setSearchFields(['author', 'text', 'email'])
+            ->setDefaultSort(['createdAt' => 'DESC'])
+        ;
+    }*/
     /*
     public function configureFields(string $pageName): iterable
     {
