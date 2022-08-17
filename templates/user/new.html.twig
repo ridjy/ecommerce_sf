@@ -44,6 +44,7 @@
                             <input id="password2" type="Password" placeholder="Confirmer mot de passe" name="password2" required="">
                         </div>
                         <button class="btn btn-primary btn-block">{{ button_label|default('Enregistrer') }}</button>
+                        <div style="display:none">{{ form_widget(form.avatar) }}</div>
                     {{ form_end(form) }}
                     <p class="continue"><span>ou se connecter avec</span></p>
                     <div class="social-login">
