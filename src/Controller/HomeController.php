@@ -67,6 +67,16 @@ class HomeController extends AbstractController
     }
 
     /**
+     * @Route("/about", name="app_about")
+     */
+    public function about(): Response
+    {
+        return $this->render('home/about.html.twig', [
+            'menu' => 'about',
+        ]);
+    }
+
+    /**
      * @Route("/advert/view/{year}/{slug}.{format}", name="oc_advert_view_slug", requirements={
      *   "year"   = "\d{4}",
      *   "format" = "html|xml"
