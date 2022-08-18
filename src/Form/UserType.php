@@ -23,15 +23,27 @@ class UserType extends AbstractType
                 'label' => 'Vorname',
                 'attr' => array(
                     'placeholder' => 'Votre pseudo')))
+            ->add('firstname',TextType::class,array(
+                'label' => 'Nom',
+                'attr' => array(
+                    'placeholder' => '')))
+            ->add('lastname',TextType::class,array(
+                'label' => 'Prénom',
+                'attr' => array(
+                    'placeholder' => '')))
+            ->add('address',TextType::class,array(
+                'label' => 'Adresse',
+                'attr' => array(
+                    'placeholder' => '')))
+            ->add('phone',TextType::class,array(
+                'label' => 'Téléphone',
+                'attr' => array(
+                    'placeholder' => '')))
             ->add('email',EmailType::class,array(
                 'label' => 'Vormail',
                 'attr' => array(
                     'placeholder' => 'Votre adresse mail')))
             //->add('roles') //à ajouter par defaut
-            ->add('password', PasswordType::class,array(
-                'label' => 'Vormdp',
-                'attr' => array(
-                    'placeholder' => 'Votre mot de passe')))
             ->add('avatar', FileType::class, [
                 'label' => 'Votre avatar (PNG ou Jpeg)',
                 // unmapped means that this field is not associated to any entity property

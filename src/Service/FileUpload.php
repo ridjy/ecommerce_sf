@@ -7,13 +7,12 @@ use Symfony\Component\String\Slugger\SluggerInterface;
 
 class FileUpload
 {
-    private $targetDirectory;
+    private const DIRECTORY = "/upload/";
     private $slugger;
 
     //targetdirectory dans service.yaml
-    public function __construct($targetDirectory, SluggerInterface $slugger)
+    public function __construct(SluggerInterface $slugger)
     {
-        $this->targetDirectory = $targetDirectory;
         $this->slugger = $slugger;
     }
 
@@ -34,6 +33,6 @@ class FileUpload
 
     public function getTargetDirectory()
     {
-        return $this->targetDirectory;
+        return self::DIRECTORY;
     }
 }

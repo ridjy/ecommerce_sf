@@ -12,6 +12,11 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 //restriction d'accès
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
+use App\Service\FileUpload;
+//ajout du use pour utiliser le type input password de Symfony
+use Symfony\Component\Form\Extension\Core\Type\PasswordType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
 
 /**
  * @Route("/user")
@@ -26,6 +31,7 @@ class UserController extends AbstractController
     {
         return $this->render('user/index.html.twig', [
             'users' => $userRepository->findAll(),
+            'menu' => 'utilisateur',
         ]);
     }
 
@@ -35,7 +41,22 @@ class UserController extends AbstractController
     public function new(Request $request, UserRepository $userRepository, UserPasswordEncoderInterface $passwordEncoder): Response
     {
         $user = new User();
-        $form = $this->createForm(UserType::class, $user);
+
+        $form = $this->createFormBuilder($user)
+            ->add('username',TextType::class,array(
+                'label' => 'Vorname',
+                'attr' => array(
+                    'placeholder' => 'Votre pseudo')))
+            ->add('email',EmailType::class,array(
+                'label' => 'Vormail',
+                'attr' => array(
+                    'placeholder' => 'Votre adresse mail')))
+            ->add('password', PasswordType::class,array(
+                'label' => 'Vormdp',
+                'attr' => array(
+                    'placeholder' => 'Votre mot de passe')))
+            ->getForm();
+
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) 
@@ -66,13 +87,20 @@ class UserController extends AbstractController
     /**
      * @Route("/{id}/edit", name="app_user_edit", methods={"GET", "POST"})
      */
-    public function edit(Request $request, User $user, UserRepository $userRepository, UserPasswordEncoderInterface $passwordEncoder): Response
+    public function edit(Request $request, User $user, UserRepository $userRepository, UserPasswordEncoderInterface $passwordEncoder, FileUpload $fileUploader): Response
     {
         $form = $this->createForm(UserType::class, $user);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $user->setPassword($passwordEncoder->encodePassword($user, $user->getPassword()));
+            //pas e changement mdp ici
+            //$user->setPassword($passwordEncoder->encodePassword($user, $user->getPassword()));
+            /** @var UploadedFile $a_avatar */
+            $a_avatar = $form->get('avatar')->getData();
+            if ($a_avatar) {
+                $newFilename = $fileUploader->upload($a_avatar);
+                $user->setavatar($newFilename);
+            }
             $userRepository->add($user, true);
 
             return $this->redirectToRoute('app_user_index', [], Response::HTTP_SEE_OTHER);
