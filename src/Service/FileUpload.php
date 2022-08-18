@@ -7,7 +7,7 @@ use Symfony\Component\String\Slugger\SluggerInterface;
 
 class FileUpload
 {
-    private const DIRECTORY = "/upload/";
+    private const DIRECTORY = "./upload/";
     private $slugger;
 
     //targetdirectory dans service.yaml
