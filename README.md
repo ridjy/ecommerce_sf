@@ -42,3 +42,8 @@ composer require symfony/mailer
 modifier le .env pour le param smtp sous MAILERDSN
 composer require symfony/google-mailer
 //google mailer pour google
+
+//creation s'un subscriber
+php bin/console make:subscriber TwigEventSubscriber
+//un listener avec une méthode statique getSubscribedEvents() qui retourne sa configuration.
+//Ceci permet aux subscribers d'être enregistrés automatiquement dans le dispatcher Symfony.
