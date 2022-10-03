@@ -8,12 +8,29 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\Config\Definition\Exception\Exception;
 
 /**
  * @ORM\Entity(repositoryClass=ProduitRepository::class)
  */
 class Produit
 {
+    const FOOD_PRODUCT = 'food';
+    public function __construct($name, $type, $price)
+    {
+        $this->name = $name;
+        $this->type = $type;
+        $this->price = $price;
+        $this->categorie = new ArrayCollection();
+    }
+
+    public function computeTVA(): float
+    {
+        if (self::FOOD_PRODUCT == $this->type) {
+            return $this->price * 0.055;
+        }
+    }
+
     /**
      * @ORM\Id
      * @ORM\GeneratedValue
@@ -61,10 +78,10 @@ class Produit
      */
     private $image;
 
-    public function __construct()
+    /*public function __construct()
     {
         $this->categorie = new ArrayCollection();
-    }
+    }*/
 
     public function getId(): ?int
     {

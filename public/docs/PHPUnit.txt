@@ -1,0 +1,16 @@
+# test unitaire avec PHPUnit
+composer require --dev phpunit/phpunit ^9
+//la version 9 de PHPUnit
+
+composer require --dev symfony/phpunit-bridge
+//la dépendance pour lancer PHPUnit
+
+#verifier quer PHPUnit est installé 
+vendor/bin/phpunit
+
+#la classe de test doit avoir le même nom que la classe à tester suffixé de test
+ex : tests\Controller\UserControllerTest.php => teste la classe src\Controller\UserController.php
+
+#dans la classe test
+$this->assertSame(0.055, $product->computeTVA());//res attendu, fonction appelé
+
