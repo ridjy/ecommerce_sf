@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Dashboard for D:\Projets\utilities\ecommerce_sf\src</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="_css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="_css/nv.d3.min.css" rel="stylesheet" type="text/css">
+  <link href="_css/style.css" rel="stylesheet" type="text/css">
+  <link href="_css/custom.css" rel="stylesheet" type="text/css">
+ </head>
+ <body>
+  <header>
+   <div class="container-fluid">
+    <div class="row">
+     <div class="col-md-12">
+      <nav aria-label="breadcrumb">
+       <ol class="breadcrumb">
+         <li class="breadcrumb-item"><a href="index.html">D:\Projets\utilities\ecommerce_sf\src</a></li>
+         <li class="breadcrumb-item active">(Dashboard)</li>
+
+       </ol>
+      </nav>
+     </div>
+    </div>
+   </div>
+  </header>
+  <div class="container-fluid">
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Classes</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="classCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="classComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Controller/Admin/CategorieCrudController.php.html#8">App\Controller\Admin\CategorieCrudController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/User.php.html#16">App\Entity\User</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Security/GoogleAuthenticator.php.html#35">App\Security\GoogleAuthenticator</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Security/GithubAuthenticator.php.html#34">App\Security\GithubAuthenticator</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Security/FacebookAuthenticator.php.html#26">App\Security\FacebookAuthenticator</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Security/AppCustomAuthenticator.php.html#24">App\Security\AppCustomAuthenticator</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/UserRepository.php.html#20">App\Repository\UserRepository</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/ProduitRepository.php.html#17">App\Repository\ProduitRepository</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/PanierRepository.php.html#17">App\Repository\PanierRepository</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/NewsLetterRepository.php.html#17">App\Repository\NewsLetterRepository</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/CommandeRepository.php.html#17">App\Repository\CommandeRepository</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/CodePromoRepository.php.html#17">App\Repository\CodePromoRepository</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/CategorieRepository.php.html#17">App\Repository\CategorieRepository</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Form/UserType.php.html#17">App\Form\UserType</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="EventSubscriber/TwigEventSubscriber.php.html#9">App\EventSubscriber\TwigEventSubscriber</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Service/FileUpload.php.html#8">App\Service\FileUpload</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/Admin/CodePromoCrudController.php.html#8">App\Controller\Admin\CodePromoCrudController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Panier.php.html#11">App\Entity\Panier</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/NewsLetter.php.html#11">App\Entity\NewsLetter</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Commande.php.html#12">App\Entity\Commande</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/CodePromo.php.html#12">App\Entity\CodePromo</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Categorie.php.html#14">App\Entity\Categorie</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/UserController.php.html#24">App\Controller\UserController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/SecurityController.php.html#13">App\Controller\SecurityController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/HomeController.php.html#13">App\Controller\HomeController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/Admin/UserCrudController.php.html#9">App\Controller\Admin\UserCrudController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/Admin/ProduitCrudController.php.html#8">App\Controller\Admin\ProduitCrudController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/Admin/PanierCrudController.php.html#8">App\Controller\Admin\PanierCrudController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/Admin/DashboardController.php.html#18">App\Controller\Admin\DashboardController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/Admin/CommandeCrudController.php.html#8">App\Controller\Admin\CommandeCrudController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Produit.php.html#16">App\Entity\Produit</a></td><td class="text-right">19%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Entity/User.php.html#16">App\Entity\User</a></td><td class="text-right">1260</td></tr>
+       <tr><td><a href="Entity/Produit.php.html#16">App\Entity\Produit</a></td><td class="text-right">229</td></tr>
+       <tr><td><a href="Security/GoogleAuthenticator.php.html#35">App\Security\GoogleAuthenticator</a></td><td class="text-right">182</td></tr>
+       <tr><td><a href="Security/GithubAuthenticator.php.html#34">App\Security\GithubAuthenticator</a></td><td class="text-right">182</td></tr>
+       <tr><td><a href="Controller/UserController.php.html#24">App\Controller\UserController</a></td><td class="text-right">132</td></tr>
+       <tr><td><a href="Entity/Categorie.php.html#14">App\Entity\Categorie</a></td><td class="text-right">132</td></tr>
+       <tr><td><a href="Repository/UserRepository.php.html#20">App\Repository\UserRepository</a></td><td class="text-right">72</td></tr>
+       <tr><td><a href="Controller/SecurityController.php.html#13">App\Controller\SecurityController</a></td><td class="text-right">72</td></tr>
+       <tr><td><a href="Security/AppCustomAuthenticator.php.html#24">App\Security\AppCustomAuthenticator</a></td><td class="text-right">72</td></tr>
+       <tr><td><a href="Controller/HomeController.php.html#13">App\Controller\HomeController</a></td><td class="text-right">56</td></tr>
+       <tr><td><a href="Security/FacebookAuthenticator.php.html#26">App\Security\FacebookAuthenticator</a></td><td class="text-right">56</td></tr>
+       <tr><td><a href="Repository/NewsLetterRepository.php.html#17">App\Repository\NewsLetterRepository</a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="Repository/ProduitRepository.php.html#17">App\Repository\ProduitRepository</a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="Repository/PanierRepository.php.html#17">App\Repository\PanierRepository</a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="Repository/CommandeRepository.php.html#17">App\Repository\CommandeRepository</a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="Repository/CodePromoRepository.php.html#17">App\Repository\CodePromoRepository</a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="Repository/CategorieRepository.php.html#17">App\Repository\CategorieRepository</a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="Service/FileUpload.php.html#8">App\Service\FileUpload</a></td><td class="text-right">20</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Methods</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="methodCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="methodComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Controller/Admin/CategorieCrudController.php.html#10"><abbr title="App\Controller\Admin\CategorieCrudController::getEntityFqcn">getEntityFqcn</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Form/UserType.php.html#19"><abbr title="App\Form\UserType::buildForm">buildForm</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/User.php.html#294"><abbr title="App\Entity\User::getAddress">getAddress</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/User.php.html#299"><abbr title="App\Entity\User::setAddress">setAddress</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/User.php.html#306"><abbr title="App\Entity\User::getPhone">getPhone</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/User.php.html#311"><abbr title="App\Entity\User::setPhone">setPhone</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="EventSubscriber/TwigEventSubscriber.php.html#14"><abbr title="App\EventSubscriber\TwigEventSubscriber::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="EventSubscriber/TwigEventSubscriber.php.html#19"><abbr title="App\EventSubscriber\TwigEventSubscriber::onControllerEvent">onControllerEvent</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="EventSubscriber/TwigEventSubscriber.php.html#24"><abbr title="App\EventSubscriber\TwigEventSubscriber::getSubscribedEvents">getSubscribedEvents</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Form/UserType.php.html#78"><abbr title="App\Form\UserType::configureOptions">configureOptions</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/User.php.html#282"><abbr title="App\Entity\User::getLastname">getLastname</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/CategorieRepository.php.html#19"><abbr title="App\Repository\CategorieRepository::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/CategorieRepository.php.html#24"><abbr title="App\Repository\CategorieRepository::add">add</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/CategorieRepository.php.html#33"><abbr title="App\Repository\CategorieRepository::remove">remove</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/CodePromoRepository.php.html#19"><abbr title="App\Repository\CodePromoRepository::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/CodePromoRepository.php.html#24"><abbr title="App\Repository\CodePromoRepository::add">add</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/CodePromoRepository.php.html#33"><abbr title="App\Repository\CodePromoRepository::remove">remove</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/CommandeRepository.php.html#19"><abbr title="App\Repository\CommandeRepository::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/CommandeRepository.php.html#24"><abbr title="App\Repository\CommandeRepository::add">add</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/User.php.html#287"><abbr title="App\Entity\User::setLastname">setLastname</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/User.php.html#275"><abbr title="App\Entity\User::setFirstname">setFirstname</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/NewsLetterRepository.php.html#19"><abbr title="App\Repository\NewsLetterRepository::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/User.php.html#200"><abbr title="App\Entity\User::addCodepromo">addCodepromo</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/User.php.html#129"><abbr title="App\Entity\User::getRoles">getRoles</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/User.php.html#138"><abbr title="App\Entity\User::setRoles">setRoles</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/User.php.html#148"><abbr title="App\Entity\User::getPassword">getPassword</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/User.php.html#153"><abbr title="App\Entity\User::setPassword">setPassword</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/User.php.html#166"><abbr title="App\Entity\User::getSalt">getSalt</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/User.php.html#180"><abbr title="App\Entity\User::getEmail">getEmail</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/User.php.html#185"><abbr title="App\Entity\User::setEmail">setEmail</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/User.php.html#195"><abbr title="App\Entity\User::getCodepromo">getCodepromo</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/User.php.html#210"><abbr title="App\Entity\User::removeCodepromo">removeCodepromo</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/User.php.html#270"><abbr title="App\Entity\User::getFirstname">getFirstname</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/User.php.html#222"><abbr title="App\Entity\User::getGithubId">getGithubId</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/User.php.html#227"><abbr title="App\Entity\User::setGithubId">setGithubId</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/User.php.html#234"><abbr title="App\Entity\User::getGoogleId">getGoogleId</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/User.php.html#239"><abbr title="App\Entity\User::setGoogleId">setGoogleId</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/User.php.html#246"><abbr title="App\Entity\User::getFacebookId">getFacebookId</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/User.php.html#251"><abbr title="App\Entity\User::setFacebookId">setFacebookId</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/User.php.html#258"><abbr title="App\Entity\User::getAvatar">getAvatar</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/User.php.html#263"><abbr title="App\Entity\User::setAvatar">setAvatar</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/CommandeRepository.php.html#33"><abbr title="App\Repository\CommandeRepository::remove">remove</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/NewsLetterRepository.php.html#24"><abbr title="App\Repository\NewsLetterRepository::add">add</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/User.php.html#109"><abbr title="App\Entity\User::setUsername">setUsername</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Security/GithubAuthenticator.php.html#120"><abbr title="App\Security\GithubAuthenticator::getClient">getClient</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Security/FacebookAuthenticator.php.html#107"><abbr title="App\Security\FacebookAuthenticator::start">start</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Security/GithubAuthenticator.php.html#45"><abbr title="App\Security\GithubAuthenticator::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Security/GithubAuthenticator.php.html#55"><abbr title="App\Security\GithubAuthenticator::start">start</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Security/GithubAuthenticator.php.html#63"><abbr title="App\Security\GithubAuthenticator::supports">supports</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Security/GithubAuthenticator.php.html#69"><abbr title="App\Security\GithubAuthenticator::authenticate">authenticate</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Security/GithubAuthenticator.php.html#105"><abbr title="App\Security\GithubAuthenticator::onAuthenticationFailure">onAuthenticationFailure</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Security/GithubAuthenticator.php.html#114"><abbr title="App\Security\GithubAuthenticator::onAuthenticationSuccess">onAuthenticationSuccess</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Security/GoogleAuthenticator.php.html#46"><abbr title="App\Security\GoogleAuthenticator::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Security/FacebookAuthenticator.php.html#85"><abbr title="App\Security\FacebookAuthenticator::onAuthenticationSuccess">onAuthenticationSuccess</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Security/GoogleAuthenticator.php.html#56"><abbr title="App\Security\GoogleAuthenticator::start">start</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Security/GoogleAuthenticator.php.html#64"><abbr title="App\Security\GoogleAuthenticator::supports">supports</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Security/GoogleAuthenticator.php.html#70"><abbr title="App\Security\GoogleAuthenticator::authenticate">authenticate</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Security/GoogleAuthenticator.php.html#107"><abbr title="App\Security\GoogleAuthenticator::onAuthenticationFailure">onAuthenticationFailure</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Security/GoogleAuthenticator.php.html#116"><abbr title="App\Security\GoogleAuthenticator::onAuthenticationSuccess">onAuthenticationSuccess</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Security/GoogleAuthenticator.php.html#123"><abbr title="App\Security\GoogleAuthenticator::getClient">getClient</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Service/FileUpload.php.html#14"><abbr title="App\Service\FileUpload::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Service/FileUpload.php.html#19"><abbr title="App\Service\FileUpload::upload">upload</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Security/FacebookAuthenticator.php.html#96"><abbr title="App\Security\FacebookAuthenticator::onAuthenticationFailure">onAuthenticationFailure</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Security/FacebookAuthenticator.php.html#50"><abbr title="App\Security\FacebookAuthenticator::authenticate">authenticate</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/NewsLetterRepository.php.html#33"><abbr title="App\Repository\NewsLetterRepository::remove">remove</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/UserRepository.php.html#36"><abbr title="App\Repository\UserRepository::remove">remove</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/PanierRepository.php.html#19"><abbr title="App\Repository\PanierRepository::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/PanierRepository.php.html#24"><abbr title="App\Repository\PanierRepository::add">add</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/PanierRepository.php.html#33"><abbr title="App\Repository\PanierRepository::remove">remove</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/ProduitRepository.php.html#19"><abbr title="App\Repository\ProduitRepository::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/ProduitRepository.php.html#24"><abbr title="App\Repository\ProduitRepository::add">add</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/ProduitRepository.php.html#33"><abbr title="App\Repository\ProduitRepository::remove">remove</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/UserRepository.php.html#22"><abbr title="App\Repository\UserRepository::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/UserRepository.php.html#27"><abbr title="App\Repository\UserRepository::add">add</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/UserRepository.php.html#48"><abbr title="App\Repository\UserRepository::upgradePassword">upgradePassword</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Security/FacebookAuthenticator.php.html#44"><abbr title="App\Security\FacebookAuthenticator::supports">supports</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/UserRepository.php.html#59"><abbr title="App\Repository\UserRepository::findByEmailOrUsername">findByEmailOrUsername</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Security/AppCustomAuthenticator.php.html#32"><abbr title="App\Security\AppCustomAuthenticator::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Security/AppCustomAuthenticator.php.html#39"><abbr title="App\Security\AppCustomAuthenticator::supports">supports</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Security/AppCustomAuthenticator.php.html#47"><abbr title="App\Security\AppCustomAuthenticator::getCredentials">getCredentials</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Security/AppCustomAuthenticator.php.html#63"><abbr title="App\Security\AppCustomAuthenticator::authenticate">authenticate</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Security/AppCustomAuthenticator.php.html#81"><abbr title="App\Security\AppCustomAuthenticator::onAuthenticationSuccess">onAuthenticationSuccess</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Security/AppCustomAuthenticator.php.html#92"><abbr title="App\Security\AppCustomAuthenticator::getLoginUrl">getLoginUrl</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Security/FacebookAuthenticator.php.html#34"><abbr title="App\Security\FacebookAuthenticator::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/User.php.html#121"><abbr title="App\Entity\User::getUserIdentifier">getUserIdentifier</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/User.php.html#104"><abbr title="App\Entity\User::getUsername">getUsername</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/Admin/CodePromoCrudController.php.html#10"><abbr title="App\Controller\Admin\CodePromoCrudController::getEntityFqcn">getEntityFqcn</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Categorie.php.html#66"><abbr title="App\Entity\Categorie::setRemise">setRemise</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/UserController.php.html#90"><abbr title="App\Controller\UserController::edit">edit</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/UserController.php.html#120"><abbr title="App\Controller\UserController::delete">delete</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Categorie.php.html#39"><abbr title="App\Entity\Categorie::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Categorie.php.html#44"><abbr title="App\Entity\Categorie::getId">getId</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Categorie.php.html#49"><abbr title="App\Entity\Categorie::getNomCategorie">getNomCategorie</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Categorie.php.html#54"><abbr title="App\Entity\Categorie::setNomCategorie">setNomCategorie</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Categorie.php.html#61"><abbr title="App\Entity\Categorie::getRemise">getRemise</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Categorie.php.html#76"><abbr title="App\Entity\Categorie::getProduits">getProduits</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/UserController.php.html#41"><abbr title="App\Controller\UserController::new">new</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Categorie.php.html#81"><abbr title="App\Entity\Categorie::addProduit">addProduit</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Categorie.php.html#91"><abbr title="App\Entity\Categorie::removeProduit">removeProduit</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/CodePromo.php.html#38"><abbr title="App\Entity\CodePromo::getId">getId</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/CodePromo.php.html#43"><abbr title="App\Entity\CodePromo::getCode">getCode</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/CodePromo.php.html#48"><abbr title="App\Entity\CodePromo::setCode">setCode</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/CodePromo.php.html#55"><abbr title="App\Entity\CodePromo::getDatePeremption">getDatePeremption</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/CodePromo.php.html#60"><abbr title="App\Entity\CodePromo::setDatePeremption">setDatePeremption</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/CodePromo.php.html#67"><abbr title="App\Entity\CodePromo::getUser">getUser</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/UserController.php.html#79"><abbr title="App\Controller\UserController::show">show</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/UserController.php.html#30"><abbr title="App\Controller\UserController::index">index</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Commande.php.html#43"><abbr title="App\Entity\Commande::getId">getId</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/Admin/UserCrudController.php.html#16"><abbr title="App\Controller\Admin\UserCrudController::configureCrud">configureCrud</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/Admin/CommandeCrudController.php.html#10"><abbr title="App\Controller\Admin\CommandeCrudController::getEntityFqcn">getEntityFqcn</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/Admin/DashboardController.php.html#24"><abbr title="App\Controller\Admin\DashboardController::index">index</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/Admin/DashboardController.php.html#30"><abbr title="App\Controller\Admin\DashboardController::configureDashboard">configureDashboard</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/Admin/DashboardController.php.html#36"><abbr title="App\Controller\Admin\DashboardController::configureMenuItems">configureMenuItems</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/Admin/DashboardController.php.html#48"><abbr title="App\Controller\Admin\DashboardController::configureUserMenu">configureUserMenu</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/Admin/PanierCrudController.php.html#10"><abbr title="App\Controller\Admin\PanierCrudController::getEntityFqcn">getEntityFqcn</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/Admin/ProduitCrudController.php.html#10"><abbr title="App\Controller\Admin\ProduitCrudController::getEntityFqcn">getEntityFqcn</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/Admin/UserCrudController.php.html#11"><abbr title="App\Controller\Admin\UserCrudController::getEntityFqcn">getEntityFqcn</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/HomeController.php.html#18"><abbr title="App\Controller\HomeController::index">index</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/SecurityController.php.html#96"><abbr title="App\Controller\SecurityController::logout">logout</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/HomeController.php.html#28"><abbr title="App\Controller\HomeController::contact">contact</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/HomeController.php.html#38"><abbr title="App\Controller\HomeController::contactSend">contactSend</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/HomeController.php.html#72"><abbr title="App\Controller\HomeController::about">about</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/HomeController.php.html#85"><abbr title="App\Controller\HomeController::exampleRoute">exampleRoute</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/SecurityController.php.html#18"><abbr title="App\Controller\SecurityController::login">login</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/SecurityController.php.html#41"><abbr title="App\Controller\SecurityController::connect">connect</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/SecurityController.php.html#53"><abbr title="App\Controller\SecurityController::connectGoogle">connectGoogle</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/SecurityController.php.html#83"><abbr title="App\Controller\SecurityController::connectFacebook">connectFacebook</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/CodePromo.php.html#72"><abbr title="App\Entity\CodePromo::setUser">setUser</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Commande.php.html#48"><abbr title="App\Entity\Commande::getIdCommande">getIdCommande</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/User.php.html#97"><abbr title="App\Entity\User::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Produit.php.html#127"><abbr title="App\Entity\Produit::getDescription">getDescription</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Produit.php.html#86"><abbr title="App\Entity\Produit::getId">getId</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Produit.php.html#91"><abbr title="App\Entity\Produit::getLibelle">getLibelle</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Produit.php.html#96"><abbr title="App\Entity\Produit::setLibelle">setLibelle</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Produit.php.html#103"><abbr title="App\Entity\Produit::getPrix">getPrix</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Produit.php.html#108"><abbr title="App\Entity\Produit::setPrix">setPrix</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Produit.php.html#115"><abbr title="App\Entity\Produit::getRemise">getRemise</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Produit.php.html#120"><abbr title="App\Entity\Produit::setRemise">setRemise</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Produit.php.html#132"><abbr title="App\Entity\Produit::setDescription">setDescription</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Panier.php.html#42"><abbr title="App\Entity\Panier::getDatePanier">getDatePanier</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Produit.php.html#139"><abbr title="App\Entity\Produit::getStock">getStock</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Produit.php.html#144"><abbr title="App\Entity\Produit::setStock">setStock</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Produit.php.html#154"><abbr title="App\Entity\Produit::getCategorie">getCategorie</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Produit.php.html#159"><abbr title="App\Entity\Produit::addCategorie">addCategorie</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Produit.php.html#168"><abbr title="App\Entity\Produit::removeCategorie">removeCategorie</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Produit.php.html#175"><abbr title="App\Entity\Produit::getImage">getImage</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Produit.php.html#180"><abbr title="App\Entity\Produit::setImage">setImage</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/User.php.html#92"><abbr title="App\Entity\User::getId">getId</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Panier.php.html#47"><abbr title="App\Entity\Panier::setDatePanier">setDatePanier</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Panier.php.html#35"><abbr title="App\Entity\Panier::setIdPanier">setIdPanier</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Commande.php.html#53"><abbr title="App\Entity\Commande::setIdCommande">setIdCommande</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/NewsLetter.php.html#40"><abbr title="App\Entity\NewsLetter::getId">getId</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Commande.php.html#60"><abbr title="App\Entity\Commande::getDatePaiement">getDatePaiement</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Commande.php.html#65"><abbr title="App\Entity\Commande::setDatePaiement">setDatePaiement</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Commande.php.html#72"><abbr title="App\Entity\Commande::getTypePaiement">getTypePaiement</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Commande.php.html#77"><abbr title="App\Entity\Commande::setTypePaiement">setTypePaiement</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Commande.php.html#84"><abbr title="App\Entity\Commande::getAdresseLivraison">getAdresseLivraison</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Commande.php.html#89"><abbr title="App\Entity\Commande::setAdresseLivraison">setAdresseLivraison</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Commande.php.html#96"><abbr title="App\Entity\Commande::getPanier">getPanier</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Commande.php.html#101"><abbr title="App\Entity\Commande::setPanier">setPanier</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/NewsLetter.php.html#45"><abbr title="App\Entity\NewsLetter::getNomComplet">getNomComplet</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Panier.php.html#30"><abbr title="App\Entity\Panier::getIdPanier">getIdPanier</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/NewsLetter.php.html#50"><abbr title="App\Entity\NewsLetter::setNomComplet">setNomComplet</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/NewsLetter.php.html#57"><abbr title="App\Entity\NewsLetter::getEmail">getEmail</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/NewsLetter.php.html#62"><abbr title="App\Entity\NewsLetter::setEmail">setEmail</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/NewsLetter.php.html#69"><abbr title="App\Entity\NewsLetter::getDateAbonnement">getDateAbonnement</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/NewsLetter.php.html#74"><abbr title="App\Entity\NewsLetter::setDateAbonnement">setDateAbonnement</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/NewsLetter.php.html#81"><abbr title="App\Entity\NewsLetter::getMailsRecu">getMailsRecu</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/NewsLetter.php.html#86"><abbr title="App\Entity\NewsLetter::setMailsRecu">setMailsRecu</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Panier.php.html#25"><abbr title="App\Entity\Panier::getId">getId</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Service/FileUpload.php.html#34"><abbr title="App\Service\FileUpload::getTargetDirectory">getTargetDirectory</abbr></a></td><td class="text-right">0%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Security/GoogleAuthenticator.php.html#70"><abbr title="App\Security\GoogleAuthenticator::authenticate">authenticate</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="Controller/UserController.php.html#90"><abbr title="App\Controller\UserController::edit">edit</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="Security/GithubAuthenticator.php.html#69"><abbr title="App\Security\GithubAuthenticator::authenticate">authenticate</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="Controller/HomeController.php.html#38"><abbr title="App\Controller\HomeController::contactSend">contactSend</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Controller/UserController.php.html#41"><abbr title="App\Controller\UserController::new">new</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Controller/SecurityController.php.html#18"><abbr title="App\Controller\SecurityController::login">login</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Entity/User.php.html#210"><abbr title="App\Entity\User::removeCodepromo">removeCodepromo</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Security/FacebookAuthenticator.php.html#50"><abbr title="App\Security\FacebookAuthenticator::authenticate">authenticate</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Repository/UserRepository.php.html#36"><abbr title="App\Repository\UserRepository::remove">remove</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Repository/UserRepository.php.html#48"><abbr title="App\Repository\UserRepository::upgradePassword">upgradePassword</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Security/AppCustomAuthenticator.php.html#39"><abbr title="App\Security\AppCustomAuthenticator::supports">supports</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Security/AppCustomAuthenticator.php.html#81"><abbr title="App\Security\AppCustomAuthenticator::onAuthenticationSuccess">onAuthenticationSuccess</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Security/GithubAuthenticator.php.html#105"><abbr title="App\Security\GithubAuthenticator::onAuthenticationFailure">onAuthenticationFailure</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Security/GithubAuthenticator.php.html#63"><abbr title="App\Security\GithubAuthenticator::supports">supports</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Repository/ProduitRepository.php.html#33"><abbr title="App\Repository\ProduitRepository::remove">remove</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Security/GithubAuthenticator.php.html#114"><abbr title="App\Security\GithubAuthenticator::onAuthenticationSuccess">onAuthenticationSuccess</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Security/GoogleAuthenticator.php.html#64"><abbr title="App\Security\GoogleAuthenticator::supports">supports</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Security/GoogleAuthenticator.php.html#107"><abbr title="App\Security\GoogleAuthenticator::onAuthenticationFailure">onAuthenticationFailure</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Security/GoogleAuthenticator.php.html#116"><abbr title="App\Security\GoogleAuthenticator::onAuthenticationSuccess">onAuthenticationSuccess</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Repository/UserRepository.php.html#27"><abbr title="App\Repository\UserRepository::add">add</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Repository/PanierRepository.php.html#24"><abbr title="App\Repository\PanierRepository::add">add</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Repository/ProduitRepository.php.html#24"><abbr title="App\Repository\ProduitRepository::add">add</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Repository/PanierRepository.php.html#33"><abbr title="App\Repository\PanierRepository::remove">remove</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Repository/NewsLetterRepository.php.html#33"><abbr title="App\Repository\NewsLetterRepository::remove">remove</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Repository/NewsLetterRepository.php.html#24"><abbr title="App\Repository\NewsLetterRepository::add">add</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Repository/CommandeRepository.php.html#33"><abbr title="App\Repository\CommandeRepository::remove">remove</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Repository/CommandeRepository.php.html#24"><abbr title="App\Repository\CommandeRepository::add">add</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Repository/CodePromoRepository.php.html#33"><abbr title="App\Repository\CodePromoRepository::remove">remove</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Repository/CodePromoRepository.php.html#24"><abbr title="App\Repository\CodePromoRepository::add">add</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Repository/CategorieRepository.php.html#33"><abbr title="App\Repository\CategorieRepository::remove">remove</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Repository/CategorieRepository.php.html#24"><abbr title="App\Repository\CategorieRepository::add">add</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Entity/User.php.html#200"><abbr title="App\Entity\User::addCodepromo">addCodepromo</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Entity/Produit.php.html#159"><abbr title="App\Entity\Produit::addCategorie">addCategorie</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Entity/Categorie.php.html#91"><abbr title="App\Entity\Categorie::removeProduit">removeProduit</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Entity/Categorie.php.html#81"><abbr title="App\Entity\Categorie::addProduit">addProduit</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Controller/UserController.php.html#120"><abbr title="App\Controller\UserController::delete">delete</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Service/FileUpload.php.html#19"><abbr title="App\Service\FileUpload::upload">upload</abbr></a></td><td class="text-right">6</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <footer>
+    <hr/>
+    <p>
+     <small>Generated by <a href="https://github.com/sebastianbergmann/php-code-coverage" target="_top">php-code-coverage 9.2.15</a> using <a href="https://secure.php.net/" target="_top">PHP 7.4.19</a> and <a href="https://phpunit.de/">PHPUnit 9.5.21</a> at Mon Oct 3 9:28:57 UTC 2022.</small>
+    </p>
+   </footer>
+  </div>
+  <script src="_js/jquery.min.js" type="text/javascript"></script>
+  <script src="_js/d3.min.js" type="text/javascript"></script>
+  <script src="_js/nv.d3.min.js" type="text/javascript"></script>
+  <script type="text/javascript">
+$(document).ready(function() {
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#classCoverageDistribution svg')
+      .datum(getCoverageDistributionData([30,0,1,0,0,0,0,0,0,0,0,1], "Class Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#methodCoverageDistribution svg')
+      .datum(getCoverageDistributionData([171,0,0,0,0,0,0,0,0,0,0,4], "Method Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getCoverageDistributionData(data, label) {
+    var labels = [
+      '0%',
+      '0-10%',
+      '10-20%',
+      '20-30%',
+      '30-40%',
+      '40-50%',
+      '50-60%',
+      '60-70%',
+      '70-80%',
+      '80-90%',
+      '90-100%',
+      '100%'
+    ];
+    var values = [];
+    $.each(labels, function(key) {
+      values.push({x: labels[key], y: data[key]});
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.tooltipContent(function(graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Cyclomatic Complexity');
+
+    d3.select('#classComplexity svg')
+      .datum(getComplexityData([[0,1,"<a href=\"Controller\/Admin\/CategorieCrudController.php.html#8\">App\\Controller\\Admin\\CategorieCrudController<\/a>"],[0,1,"<a href=\"Controller\/Admin\/CodePromoCrudController.php.html#8\">App\\Controller\\Admin\\CodePromoCrudController<\/a>"],[0,1,"<a href=\"Controller\/Admin\/CommandeCrudController.php.html#8\">App\\Controller\\Admin\\CommandeCrudController<\/a>"],[0,4,"<a href=\"Controller\/Admin\/DashboardController.php.html#18\">App\\Controller\\Admin\\DashboardController<\/a>"],[0,1,"<a href=\"Controller\/Admin\/PanierCrudController.php.html#8\">App\\Controller\\Admin\\PanierCrudController<\/a>"],[0,1,"<a href=\"Controller\/Admin\/ProduitCrudController.php.html#8\">App\\Controller\\Admin\\ProduitCrudController<\/a>"],[0,2,"<a href=\"Controller\/Admin\/UserCrudController.php.html#9\">App\\Controller\\Admin\\UserCrudController<\/a>"],[0,7,"<a href=\"Controller\/HomeController.php.html#13\">App\\Controller\\HomeController<\/a>"],[0,8,"<a href=\"Controller\/SecurityController.php.html#13\">App\\Controller\\SecurityController<\/a>"],[0,11,"<a href=\"Controller\/UserController.php.html#24\">App\\Controller\\UserController<\/a>"],[0,11,"<a href=\"Entity\/Categorie.php.html#14\">App\\Entity\\Categorie<\/a>"],[0,7,"<a href=\"Entity\/CodePromo.php.html#12\">App\\Entity\\CodePromo<\/a>"],[0,11,"<a href=\"Entity\/Commande.php.html#12\">App\\Entity\\Commande<\/a>"],[0,9,"<a href=\"Entity\/NewsLetter.php.html#11\">App\\Entity\\NewsLetter<\/a>"],[0,5,"<a href=\"Entity\/Panier.php.html#11\">App\\Entity\\Panier<\/a>"],[19.35483870967742,20,"<a href=\"Entity\/Produit.php.html#16\">App\\Entity\\Produit<\/a>"],[0,35,"<a href=\"Entity\/User.php.html#16\">App\\Entity\\User<\/a>"],[0,3,"<a href=\"EventSubscriber\/TwigEventSubscriber.php.html#9\">App\\EventSubscriber\\TwigEventSubscriber<\/a>"],[0,2,"<a href=\"Form\/UserType.php.html#17\">App\\Form\\UserType<\/a>"],[100,0,"<a href=\"Kernel.php.html#8\">App\\Kernel<\/a>"],[0,5,"<a href=\"Repository\/CategorieRepository.php.html#17\">App\\Repository\\CategorieRepository<\/a>"],[0,5,"<a href=\"Repository\/CodePromoRepository.php.html#17\">App\\Repository\\CodePromoRepository<\/a>"],[0,5,"<a href=\"Repository\/CommandeRepository.php.html#17\">App\\Repository\\CommandeRepository<\/a>"],[0,5,"<a href=\"Repository\/NewsLetterRepository.php.html#17\">App\\Repository\\NewsLetterRepository<\/a>"],[0,5,"<a href=\"Repository\/PanierRepository.php.html#17\">App\\Repository\\PanierRepository<\/a>"],[0,5,"<a href=\"Repository\/ProduitRepository.php.html#17\">App\\Repository\\ProduitRepository<\/a>"],[0,8,"<a href=\"Repository\/UserRepository.php.html#20\">App\\Repository\\UserRepository<\/a>"],[0,8,"<a href=\"Security\/AppCustomAuthenticator.php.html#24\">App\\Security\\AppCustomAuthenticator<\/a>"],[0,7,"<a href=\"Security\/FacebookAuthenticator.php.html#26\">App\\Security\\FacebookAuthenticator<\/a>"],[0,13,"<a href=\"Security\/GithubAuthenticator.php.html#34\">App\\Security\\GithubAuthenticator<\/a>"],[0,13,"<a href=\"Security\/GoogleAuthenticator.php.html#35\">App\\Security\\GoogleAuthenticator<\/a>"],[0,4,"<a href=\"Service\/FileUpload.php.html#8\">App\\Service\\FileUpload<\/a>"]], 'Class Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.tooltipContent(function(graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Method Complexity');
+
+    d3.select('#methodComplexity svg')
+      .datum(getComplexityData([[0,1,"<a href=\"Controller\/Admin\/CategorieCrudController.php.html#10\">App\\Controller\\Admin\\CategorieCrudController::getEntityFqcn<\/a>"],[0,1,"<a href=\"Controller\/Admin\/CodePromoCrudController.php.html#10\">App\\Controller\\Admin\\CodePromoCrudController::getEntityFqcn<\/a>"],[0,1,"<a href=\"Controller\/Admin\/CommandeCrudController.php.html#10\">App\\Controller\\Admin\\CommandeCrudController::getEntityFqcn<\/a>"],[0,1,"<a href=\"Controller\/Admin\/DashboardController.php.html#24\">App\\Controller\\Admin\\DashboardController::index<\/a>"],[0,1,"<a href=\"Controller\/Admin\/DashboardController.php.html#30\">App\\Controller\\Admin\\DashboardController::configureDashboard<\/a>"],[0,1,"<a href=\"Controller\/Admin\/DashboardController.php.html#36\">App\\Controller\\Admin\\DashboardController::configureMenuItems<\/a>"],[0,1,"<a href=\"Controller\/Admin\/DashboardController.php.html#48\">App\\Controller\\Admin\\DashboardController::configureUserMenu<\/a>"],[0,1,"<a href=\"Controller\/Admin\/PanierCrudController.php.html#10\">App\\Controller\\Admin\\PanierCrudController::getEntityFqcn<\/a>"],[0,1,"<a href=\"Controller\/Admin\/ProduitCrudController.php.html#10\">App\\Controller\\Admin\\ProduitCrudController::getEntityFqcn<\/a>"],[0,1,"<a href=\"Controller\/Admin\/UserCrudController.php.html#11\">App\\Controller\\Admin\\UserCrudController::getEntityFqcn<\/a>"],[0,1,"<a href=\"Controller\/Admin\/UserCrudController.php.html#16\">App\\Controller\\Admin\\UserCrudController::configureCrud<\/a>"],[0,1,"<a href=\"Controller\/HomeController.php.html#18\">App\\Controller\\HomeController::index<\/a>"],[0,1,"<a href=\"Controller\/HomeController.php.html#28\">App\\Controller\\HomeController::contact<\/a>"],[0,3,"<a href=\"Controller\/HomeController.php.html#38\">App\\Controller\\HomeController::contactSend<\/a>"],[0,1,"<a href=\"Controller\/HomeController.php.html#72\">App\\Controller\\HomeController::about<\/a>"],[0,1,"<a href=\"Controller\/HomeController.php.html#85\">App\\Controller\\HomeController::exampleRoute<\/a>"],[0,3,"<a href=\"Controller\/SecurityController.php.html#18\">App\\Controller\\SecurityController::login<\/a>"],[0,1,"<a href=\"Controller\/SecurityController.php.html#41\">App\\Controller\\SecurityController::connect<\/a>"],[0,1,"<a href=\"Controller\/SecurityController.php.html#53\">App\\Controller\\SecurityController::connectGoogle<\/a>"],[100,1,"<a href=\"Controller\/SecurityController.php.html#69\">App\\Controller\\SecurityController::connectCheckAction<\/a>"],[0,1,"<a href=\"Controller\/SecurityController.php.html#83\">App\\Controller\\SecurityController::connectFacebook<\/a>"],[0,1,"<a href=\"Controller\/SecurityController.php.html#96\">App\\Controller\\SecurityController::logout<\/a>"],[0,1,"<a href=\"Controller\/UserController.php.html#30\">App\\Controller\\UserController::index<\/a>"],[0,3,"<a href=\"Controller\/UserController.php.html#41\">App\\Controller\\UserController::new<\/a>"],[0,1,"<a href=\"Controller\/UserController.php.html#79\">App\\Controller\\UserController::show<\/a>"],[0,4,"<a href=\"Controller\/UserController.php.html#90\">App\\Controller\\UserController::edit<\/a>"],[0,2,"<a href=\"Controller\/UserController.php.html#120\">App\\Controller\\UserController::delete<\/a>"],[0,1,"<a href=\"Entity\/Categorie.php.html#39\">App\\Entity\\Categorie::__construct<\/a>"],[0,1,"<a href=\"Entity\/Categorie.php.html#44\">App\\Entity\\Categorie::getId<\/a>"],[0,1,"<a href=\"Entity\/Categorie.php.html#49\">App\\Entity\\Categorie::getNomCategorie<\/a>"],[0,1,"<a href=\"Entity\/Categorie.php.html#54\">App\\Entity\\Categorie::setNomCategorie<\/a>"],[0,1,"<a href=\"Entity\/Categorie.php.html#61\">App\\Entity\\Categorie::getRemise<\/a>"],[0,1,"<a href=\"Entity\/Categorie.php.html#66\">App\\Entity\\Categorie::setRemise<\/a>"],[0,1,"<a href=\"Entity\/Categorie.php.html#76\">App\\Entity\\Categorie::getProduits<\/a>"],[0,2,"<a href=\"Entity\/Categorie.php.html#81\">App\\Entity\\Categorie::addProduit<\/a>"],[0,2,"<a href=\"Entity\/Categorie.php.html#91\">App\\Entity\\Categorie::removeProduit<\/a>"],[0,1,"<a href=\"Entity\/CodePromo.php.html#38\">App\\Entity\\CodePromo::getId<\/a>"],[0,1,"<a href=\"Entity\/CodePromo.php.html#43\">App\\Entity\\CodePromo::getCode<\/a>"],[0,1,"<a href=\"Entity\/CodePromo.php.html#48\">App\\Entity\\CodePromo::setCode<\/a>"],[0,1,"<a href=\"Entity\/CodePromo.php.html#55\">App\\Entity\\CodePromo::getDatePeremption<\/a>"],[0,1,"<a href=\"Entity\/CodePromo.php.html#60\">App\\Entity\\CodePromo::setDatePeremption<\/a>"],[0,1,"<a href=\"Entity\/CodePromo.php.html#67\">App\\Entity\\CodePromo::getUser<\/a>"],[0,1,"<a href=\"Entity\/CodePromo.php.html#72\">App\\Entity\\CodePromo::setUser<\/a>"],[0,1,"<a href=\"Entity\/Commande.php.html#43\">App\\Entity\\Commande::getId<\/a>"],[0,1,"<a href=\"Entity\/Commande.php.html#48\">App\\Entity\\Commande::getIdCommande<\/a>"],[0,1,"<a href=\"Entity\/Commande.php.html#53\">App\\Entity\\Commande::setIdCommande<\/a>"],[0,1,"<a href=\"Entity\/Commande.php.html#60\">App\\Entity\\Commande::getDatePaiement<\/a>"],[0,1,"<a href=\"Entity\/Commande.php.html#65\">App\\Entity\\Commande::setDatePaiement<\/a>"],[0,1,"<a href=\"Entity\/Commande.php.html#72\">App\\Entity\\Commande::getTypePaiement<\/a>"],[0,1,"<a href=\"Entity\/Commande.php.html#77\">App\\Entity\\Commande::setTypePaiement<\/a>"],[0,1,"<a href=\"Entity\/Commande.php.html#84\">App\\Entity\\Commande::getAdresseLivraison<\/a>"],[0,1,"<a href=\"Entity\/Commande.php.html#89\">App\\Entity\\Commande::setAdresseLivraison<\/a>"],[0,1,"<a href=\"Entity\/Commande.php.html#96\">App\\Entity\\Commande::getPanier<\/a>"],[0,1,"<a href=\"Entity\/Commande.php.html#101\">App\\Entity\\Commande::setPanier<\/a>"],[0,1,"<a href=\"Entity\/NewsLetter.php.html#40\">App\\Entity\\NewsLetter::getId<\/a>"],[0,1,"<a href=\"Entity\/NewsLetter.php.html#45\">App\\Entity\\NewsLetter::getNomComplet<\/a>"],[0,1,"<a href=\"Entity\/NewsLetter.php.html#50\">App\\Entity\\NewsLetter::setNomComplet<\/a>"],[0,1,"<a href=\"Entity\/NewsLetter.php.html#57\">App\\Entity\\NewsLetter::getEmail<\/a>"],[0,1,"<a href=\"Entity\/NewsLetter.php.html#62\">App\\Entity\\NewsLetter::setEmail<\/a>"],[0,1,"<a href=\"Entity\/NewsLetter.php.html#69\">App\\Entity\\NewsLetter::getDateAbonnement<\/a>"],[0,1,"<a href=\"Entity\/NewsLetter.php.html#74\">App\\Entity\\NewsLetter::setDateAbonnement<\/a>"],[0,1,"<a href=\"Entity\/NewsLetter.php.html#81\">App\\Entity\\NewsLetter::getMailsRecu<\/a>"],[0,1,"<a href=\"Entity\/NewsLetter.php.html#86\">App\\Entity\\NewsLetter::setMailsRecu<\/a>"],[0,1,"<a href=\"Entity\/Panier.php.html#25\">App\\Entity\\Panier::getId<\/a>"],[0,1,"<a href=\"Entity\/Panier.php.html#30\">App\\Entity\\Panier::getIdPanier<\/a>"],[0,1,"<a href=\"Entity\/Panier.php.html#35\">App\\Entity\\Panier::setIdPanier<\/a>"],[0,1,"<a href=\"Entity\/Panier.php.html#42\">App\\Entity\\Panier::getDatePanier<\/a>"],[0,1,"<a href=\"Entity\/Panier.php.html#47\">App\\Entity\\Panier::setDatePanier<\/a>"],[100,1,"<a href=\"Entity\/Produit.php.html#19\">App\\Entity\\Produit::__construct<\/a>"],[100,2,"<a href=\"Entity\/Produit.php.html#27\">App\\Entity\\Produit::computeTVA<\/a>"],[0,1,"<a href=\"Entity\/Produit.php.html#86\">App\\Entity\\Produit::getId<\/a>"],[0,1,"<a href=\"Entity\/Produit.php.html#91\">App\\Entity\\Produit::getLibelle<\/a>"],[0,1,"<a href=\"Entity\/Produit.php.html#96\">App\\Entity\\Produit::setLibelle<\/a>"],[0,1,"<a href=\"Entity\/Produit.php.html#103\">App\\Entity\\Produit::getPrix<\/a>"],[0,1,"<a href=\"Entity\/Produit.php.html#108\">App\\Entity\\Produit::setPrix<\/a>"],[0,1,"<a href=\"Entity\/Produit.php.html#115\">App\\Entity\\Produit::getRemise<\/a>"],[0,1,"<a href=\"Entity\/Produit.php.html#120\">App\\Entity\\Produit::setRemise<\/a>"],[0,1,"<a href=\"Entity\/Produit.php.html#127\">App\\Entity\\Produit::getDescription<\/a>"],[0,1,"<a href=\"Entity\/Produit.php.html#132\">App\\Entity\\Produit::setDescription<\/a>"],[0,1,"<a href=\"Entity\/Produit.php.html#139\">App\\Entity\\Produit::getStock<\/a>"],[0,1,"<a href=\"Entity\/Produit.php.html#144\">App\\Entity\\Produit::setStock<\/a>"],[0,1,"<a href=\"Entity\/Produit.php.html#154\">App\\Entity\\Produit::getCategorie<\/a>"],[0,2,"<a href=\"Entity\/Produit.php.html#159\">App\\Entity\\Produit::addCategorie<\/a>"],[0,1,"<a href=\"Entity\/Produit.php.html#168\">App\\Entity\\Produit::removeCategorie<\/a>"],[0,1,"<a href=\"Entity\/Produit.php.html#175\">App\\Entity\\Produit::getImage<\/a>"],[0,1,"<a href=\"Entity\/Produit.php.html#180\">App\\Entity\\Produit::setImage<\/a>"],[0,1,"<a href=\"Entity\/User.php.html#92\">App\\Entity\\User::getId<\/a>"],[0,1,"<a href=\"Entity\/User.php.html#97\">App\\Entity\\User::__construct<\/a>"],[0,1,"<a href=\"Entity\/User.php.html#104\">App\\Entity\\User::getUsername<\/a>"],[0,1,"<a href=\"Entity\/User.php.html#109\">App\\Entity\\User::setUsername<\/a>"],[0,1,"<a href=\"Entity\/User.php.html#121\">App\\Entity\\User::getUserIdentifier<\/a>"],[0,1,"<a href=\"Entity\/User.php.html#129\">App\\Entity\\User::getRoles<\/a>"],[0,1,"<a href=\"Entity\/User.php.html#138\">App\\Entity\\User::setRoles<\/a>"],[0,1,"<a href=\"Entity\/User.php.html#148\">App\\Entity\\User::getPassword<\/a>"],[0,1,"<a href=\"Entity\/User.php.html#153\">App\\Entity\\User::setPassword<\/a>"],[0,1,"<a href=\"Entity\/User.php.html#166\">App\\Entity\\User::getSalt<\/a>"],[100,1,"<a href=\"Entity\/User.php.html#174\">App\\Entity\\User::eraseCredentials<\/a>"],[0,1,"<a href=\"Entity\/User.php.html#180\">App\\Entity\\User::getEmail<\/a>"],[0,1,"<a href=\"Entity\/User.php.html#185\">App\\Entity\\User::setEmail<\/a>"],[0,1,"<a href=\"Entity\/User.php.html#195\">App\\Entity\\User::getCodepromo<\/a>"],[0,2,"<a href=\"Entity\/User.php.html#200\">App\\Entity\\User::addCodepromo<\/a>"],[0,3,"<a href=\"Entity\/User.php.html#210\">App\\Entity\\User::removeCodepromo<\/a>"],[0,1,"<a href=\"Entity\/User.php.html#222\">App\\Entity\\User::getGithubId<\/a>"],[0,1,"<a href=\"Entity\/User.php.html#227\">App\\Entity\\User::setGithubId<\/a>"],[0,1,"<a href=\"Entity\/User.php.html#234\">App\\Entity\\User::getGoogleId<\/a>"],[0,1,"<a href=\"Entity\/User.php.html#239\">App\\Entity\\User::setGoogleId<\/a>"],[0,1,"<a href=\"Entity\/User.php.html#246\">App\\Entity\\User::getFacebookId<\/a>"],[0,1,"<a href=\"Entity\/User.php.html#251\">App\\Entity\\User::setFacebookId<\/a>"],[0,1,"<a href=\"Entity\/User.php.html#258\">App\\Entity\\User::getAvatar<\/a>"],[0,1,"<a href=\"Entity\/User.php.html#263\">App\\Entity\\User::setAvatar<\/a>"],[0,1,"<a href=\"Entity\/User.php.html#270\">App\\Entity\\User::getFirstname<\/a>"],[0,1,"<a href=\"Entity\/User.php.html#275\">App\\Entity\\User::setFirstname<\/a>"],[0,1,"<a href=\"Entity\/User.php.html#282\">App\\Entity\\User::getLastname<\/a>"],[0,1,"<a href=\"Entity\/User.php.html#287\">App\\Entity\\User::setLastname<\/a>"],[0,1,"<a href=\"Entity\/User.php.html#294\">App\\Entity\\User::getAddress<\/a>"],[0,1,"<a href=\"Entity\/User.php.html#299\">App\\Entity\\User::setAddress<\/a>"],[0,1,"<a href=\"Entity\/User.php.html#306\">App\\Entity\\User::getPhone<\/a>"],[0,1,"<a href=\"Entity\/User.php.html#311\">App\\Entity\\User::setPhone<\/a>"],[0,1,"<a href=\"EventSubscriber\/TwigEventSubscriber.php.html#14\">App\\EventSubscriber\\TwigEventSubscriber::__construct<\/a>"],[0,1,"<a href=\"EventSubscriber\/TwigEventSubscriber.php.html#19\">App\\EventSubscriber\\TwigEventSubscriber::onControllerEvent<\/a>"],[0,1,"<a href=\"EventSubscriber\/TwigEventSubscriber.php.html#24\">App\\EventSubscriber\\TwigEventSubscriber::getSubscribedEvents<\/a>"],[0,1,"<a href=\"Form\/UserType.php.html#19\">App\\Form\\UserType::buildForm<\/a>"],[0,1,"<a href=\"Form\/UserType.php.html#78\">App\\Form\\UserType::configureOptions<\/a>"],[0,1,"<a href=\"Repository\/CategorieRepository.php.html#19\">App\\Repository\\CategorieRepository::__construct<\/a>"],[0,2,"<a href=\"Repository\/CategorieRepository.php.html#24\">App\\Repository\\CategorieRepository::add<\/a>"],[0,2,"<a href=\"Repository\/CategorieRepository.php.html#33\">App\\Repository\\CategorieRepository::remove<\/a>"],[0,1,"<a href=\"Repository\/CodePromoRepository.php.html#19\">App\\Repository\\CodePromoRepository::__construct<\/a>"],[0,2,"<a href=\"Repository\/CodePromoRepository.php.html#24\">App\\Repository\\CodePromoRepository::add<\/a>"],[0,2,"<a href=\"Repository\/CodePromoRepository.php.html#33\">App\\Repository\\CodePromoRepository::remove<\/a>"],[0,1,"<a href=\"Repository\/CommandeRepository.php.html#19\">App\\Repository\\CommandeRepository::__construct<\/a>"],[0,2,"<a href=\"Repository\/CommandeRepository.php.html#24\">App\\Repository\\CommandeRepository::add<\/a>"],[0,2,"<a href=\"Repository\/CommandeRepository.php.html#33\">App\\Repository\\CommandeRepository::remove<\/a>"],[0,1,"<a href=\"Repository\/NewsLetterRepository.php.html#19\">App\\Repository\\NewsLetterRepository::__construct<\/a>"],[0,2,"<a href=\"Repository\/NewsLetterRepository.php.html#24\">App\\Repository\\NewsLetterRepository::add<\/a>"],[0,2,"<a href=\"Repository\/NewsLetterRepository.php.html#33\">App\\Repository\\NewsLetterRepository::remove<\/a>"],[0,1,"<a href=\"Repository\/PanierRepository.php.html#19\">App\\Repository\\PanierRepository::__construct<\/a>"],[0,2,"<a href=\"Repository\/PanierRepository.php.html#24\">App\\Repository\\PanierRepository::add<\/a>"],[0,2,"<a href=\"Repository\/PanierRepository.php.html#33\">App\\Repository\\PanierRepository::remove<\/a>"],[0,1,"<a href=\"Repository\/ProduitRepository.php.html#19\">App\\Repository\\ProduitRepository::__construct<\/a>"],[0,2,"<a href=\"Repository\/ProduitRepository.php.html#24\">App\\Repository\\ProduitRepository::add<\/a>"],[0,2,"<a href=\"Repository\/ProduitRepository.php.html#33\">App\\Repository\\ProduitRepository::remove<\/a>"],[0,1,"<a href=\"Repository\/UserRepository.php.html#22\">App\\Repository\\UserRepository::__construct<\/a>"],[0,2,"<a href=\"Repository\/UserRepository.php.html#27\">App\\Repository\\UserRepository::add<\/a>"],[0,2,"<a href=\"Repository\/UserRepository.php.html#36\">App\\Repository\\UserRepository::remove<\/a>"],[0,2,"<a href=\"Repository\/UserRepository.php.html#48\">App\\Repository\\UserRepository::upgradePassword<\/a>"],[0,1,"<a href=\"Repository\/UserRepository.php.html#59\">App\\Repository\\UserRepository::findByEmailOrUsername<\/a>"],[0,1,"<a href=\"Security\/AppCustomAuthenticator.php.html#32\">App\\Security\\AppCustomAuthenticator::__construct<\/a>"],[0,2,"<a href=\"Security\/AppCustomAuthenticator.php.html#39\">App\\Security\\AppCustomAuthenticator::supports<\/a>"],[0,1,"<a href=\"Security\/AppCustomAuthenticator.php.html#47\">App\\Security\\AppCustomAuthenticator::getCredentials<\/a>"],[0,1,"<a href=\"Security\/AppCustomAuthenticator.php.html#63\">App\\Security\\AppCustomAuthenticator::authenticate<\/a>"],[0,2,"<a href=\"Security\/AppCustomAuthenticator.php.html#81\">App\\Security\\AppCustomAuthenticator::onAuthenticationSuccess<\/a>"],[0,1,"<a href=\"Security\/AppCustomAuthenticator.php.html#92\">App\\Security\\AppCustomAuthenticator::getLoginUrl<\/a>"],[0,1,"<a href=\"Security\/FacebookAuthenticator.php.html#34\">App\\Security\\FacebookAuthenticator::__construct<\/a>"],[0,1,"<a href=\"Security\/FacebookAuthenticator.php.html#44\">App\\Security\\FacebookAuthenticator::supports<\/a>"],[0,2,"<a href=\"Security\/FacebookAuthenticator.php.html#50\">App\\Security\\FacebookAuthenticator::authenticate<\/a>"],[0,1,"<a href=\"Security\/FacebookAuthenticator.php.html#85\">App\\Security\\FacebookAuthenticator::onAuthenticationSuccess<\/a>"],[0,1,"<a href=\"Security\/FacebookAuthenticator.php.html#96\">App\\Security\\FacebookAuthenticator::onAuthenticationFailure<\/a>"],[0,1,"<a href=\"Security\/FacebookAuthenticator.php.html#107\">App\\Security\\FacebookAuthenticator::start<\/a>"],[0,1,"<a href=\"Security\/GithubAuthenticator.php.html#45\">App\\Security\\GithubAuthenticator::__construct<\/a>"],[0,1,"<a href=\"Security\/GithubAuthenticator.php.html#55\">App\\Security\\GithubAuthenticator::start<\/a>"],[0,2,"<a href=\"Security\/GithubAuthenticator.php.html#63\">App\\Security\\GithubAuthenticator::supports<\/a>"],[0,4,"<a href=\"Security\/GithubAuthenticator.php.html#69\">App\\Security\\GithubAuthenticator::authenticate<\/a>"],[0,2,"<a href=\"Security\/GithubAuthenticator.php.html#105\">App\\Security\\GithubAuthenticator::onAuthenticationFailure<\/a>"],[0,2,"<a href=\"Security\/GithubAuthenticator.php.html#114\">App\\Security\\GithubAuthenticator::onAuthenticationSuccess<\/a>"],[0,1,"<a href=\"Security\/GithubAuthenticator.php.html#120\">App\\Security\\GithubAuthenticator::getClient<\/a>"],[0,1,"<a href=\"Security\/GoogleAuthenticator.php.html#46\">App\\Security\\GoogleAuthenticator::__construct<\/a>"],[0,1,"<a href=\"Security\/GoogleAuthenticator.php.html#56\">App\\Security\\GoogleAuthenticator::start<\/a>"],[0,2,"<a href=\"Security\/GoogleAuthenticator.php.html#64\">App\\Security\\GoogleAuthenticator::supports<\/a>"],[0,4,"<a href=\"Security\/GoogleAuthenticator.php.html#70\">App\\Security\\GoogleAuthenticator::authenticate<\/a>"],[0,2,"<a href=\"Security\/GoogleAuthenticator.php.html#107\">App\\Security\\GoogleAuthenticator::onAuthenticationFailure<\/a>"],[0,2,"<a href=\"Security\/GoogleAuthenticator.php.html#116\">App\\Security\\GoogleAuthenticator::onAuthenticationSuccess<\/a>"],[0,1,"<a href=\"Security\/GoogleAuthenticator.php.html#123\">App\\Security\\GoogleAuthenticator::getClient<\/a>"],[0,1,"<a href=\"Service\/FileUpload.php.html#14\">App\\Service\\FileUpload::__construct<\/a>"],[0,2,"<a href=\"Service\/FileUpload.php.html#19\">App\\Service\\FileUpload::upload<\/a>"],[0,1,"<a href=\"Service\/FileUpload.php.html#34\">App\\Service\\FileUpload::getTargetDirectory<\/a>"]], 'Method Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getComplexityData(data, label) {
+    var values = [];
+    $.each(data, function(key) {
+      var value = Math.round(data[key][0]*100) / 100;
+      values.push({
+        x: value,
+        y: data[key][1],
+        class: data[key][2],
+        size: 0.05,
+        shape: 'diamond'
+      });
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+});
+  </script>
+ </body>
+</html>
