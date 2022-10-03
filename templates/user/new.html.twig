@@ -47,18 +47,18 @@
                     {{ form_end(form) }}
                     <p class="continue"><span>ou se connecter avec</span></p>
                     <div class="social-login">
-                        <a href="#facebook">
+                        <!--<a href="{{path('connect_facebook_start')}}">
                             <div class="facebook">
                                 <span class="fab fa-facebook-f" aria-hidden="true"></span>
 
                             </div>
-                        </a>
-                        <a href="#twitter">
-                            <div class="twitter">
-                                <span class="fab fa-twitter" aria-hidden="true"></span>
+                        </a>-->
+                        <a href="{{path('app_loginGithub')}}">
+                            <div class="twitter" style="background: #444;">
+                                <span class="fab fa-github" aria-hidden="true"></span>
                             </div>
                         </a>
-                        <a href="#google">
+                        <a href="{{ path('app_loginGoogle')}}">
                             <div class="google">
                                 <span class="fab fa-google" aria-hidden="true"></span>
                             </div>
