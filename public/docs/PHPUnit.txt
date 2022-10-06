@@ -27,3 +27,15 @@ xdebug.mode=debug
 xdebug.start_with_request=yes
 xdebug.client_port = 9004
 
+#interface test coverage genéré
+http://localhost:8000/test-coverage/Entity/Produit.php.html
+
+Les lignes vertes correspondent aux lignes de code exécutées par les tests.
+Si une ligne est rouge, c'est que le code n'est pas encore couvert par les tests implémentés.
+Si une ligne est orange, le code est inatteignable.
+
+vendor/bin/phpunit --filter=testcomputeTVAFoodProduct
+test une seule méthode
+
+phpunit.xml.dist
+=> fichier de configuration du php unit

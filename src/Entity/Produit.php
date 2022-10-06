@@ -29,6 +29,9 @@ class Produit
         if (self::FOOD_PRODUCT == $this->type) {
             return $this->price * 0.055;
         }
+        if ($this->price < 0) {
+            throw new Exception('The TVA cannot be negative.');
+        }
     }
 
     /**
