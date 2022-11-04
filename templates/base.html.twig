@@ -164,8 +164,9 @@
 
             <!--Copyright-->
             <div class="footer-copyright py-3">
-            © 2022
-            <a href="#" target="_blank"> {{version}} </a>
+            © {{ "now"|date("Y") }}
+            <a href="#" target="_blank"> {{version}} </a> <br/>
+            <span id='citation'>{{ citation }}</span>
             </div>
             <!--/.Copyright-->
 
