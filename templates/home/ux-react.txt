@@ -1,0 +1,6 @@
+composer require symfony/ux-react
+
+yarn install
+yarn encore dev-server
+
+
