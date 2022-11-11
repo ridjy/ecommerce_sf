@@ -1,7 +1,17 @@
-import React from 'react';
+import React, {Component} from 'react';
 
-function Banner() {
-    return (
+
+
+class Banner extends Component { 
+
+    getCategories()
+    {
+
+    }
+
+    render() { 
+      let categories = ['Shirts','Sport wears','Outwears']
+      return (
       <nav className="navbar navbar-expand-lg navbar-dark mdb-color lighten-3 mt-3 mb-5">
 
         <span className="navbar-brand">Categories:</span>
@@ -14,20 +24,16 @@ function Banner() {
         <div className="collapse navbar-collapse" id="basicExampleNav">
 
           <ul className="navbar-nav mr-auto">
-            <li className="nav-item active">
+            <li className="nav-item active" key="1">
               <a className="nav-link" href="#">All
                 <span className="sr-only">(current)</span>
               </a>
             </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#">Shirts</a>
+            {categories.map((cat) => (
+              <li className="nav-item" key={cat} >
+              <a className="nav-link" href="#">{cat}</a>
             </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#">Sport wears</a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#">Outwears</a>
-            </li>
+            ) )}
 
           </ul>
 
@@ -39,7 +45,8 @@ function Banner() {
         </div>
         
       </nav>
-    )
+    )//fin return
+  }//fin render  
 }
 
 export default Banner
