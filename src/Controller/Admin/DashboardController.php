@@ -12,6 +12,7 @@ use App\Entity\Categorie;
 use App\Entity\CodePromo;
 use App\Entity\Commande;
 use App\Entity\Produit;  
+use App\Entity\Citation;  
 use EasyCorp\Bundle\EasyAdminBundle\Config\UserMenu;
 use Symfony\Component\Security\Core\User\UserInterface;  
 
@@ -43,6 +44,7 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Categorie', 'fa fa-file-text', Categorie::class);
         yield MenuItem::linkToCrud('Produits', 'fa fa-database', Produit::class);
         yield MenuItem::linkToCrud('CodePromo', 'fa fa-code', CodePromo::class);
+        yield MenuItem::linkToCrud('Citations', 'fa fa-book', Citation::class);
     }
 
     public function configureUserMenu(UserInterface $user): UserMenu
