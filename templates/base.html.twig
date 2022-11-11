@@ -175,6 +175,7 @@
 
         {% block javascripts %}
             <!-- SCRIPTS -->
+            {{ encore_entry_script_tags('app') }}
             <!-- JQuery -->
             <script type="text/javascript" src="{{asset('js/jquery-3.4.1.min.js')}}"></script>
             <!-- Bootstrap tooltips -->
@@ -189,6 +190,9 @@
                 new WOW().init();
 
             </script>
+
+            {{ encore_entry_script_tags('app') }}
+
         {% endblock %}
     </body>
 </html>

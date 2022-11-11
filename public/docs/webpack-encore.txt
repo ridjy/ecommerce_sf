@@ -4,10 +4,11 @@
 * Start the development server: yarn encore dev-server
 
 2) installer REACT
-$ yarn add @babel/preset-react --dev
-$ yarn add react-router-dom
-$ yarn add --dev react react-dom prop-types axios
-$ yarn add @babel/plugin-proposal-class-properties @babel/plugin-transform-runtime
+yarn add @babel/preset-react --dev
+yarn add react-router-dom
+yarn add --dev react react-dom prop-types axios
+yarn add @babel/plugin-proposal-class-properties @babel/plugin-transform-runtime
+yarn add @babel/plugin-syntax-jsx
 
 3) configuration de webpack.config.js
 .addEntry('app', './assets/app.js')
@@ -23,3 +24,5 @@ en plus de run symfony
 5) {{ encore_entry_script_tags('app') }}
 {# encore_entry_link_tags('app') #}
 ajout des scripts react + style dans le twig base
+
+creation babel.config.js à la racine du projet
