@@ -38,7 +38,7 @@ class DashboardController extends AbstractDashboardController
     {
         yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
         yield MenuItem::linkToRoute('Site web', 'fa fa-shopping-bag', 'app_home');
-        yield MenuItem::section('Blog');
+        yield MenuItem::section('Administration');
         yield MenuItem::linkToCrud('User', 'fa fa-user', User::class);
         yield MenuItem::section('Boutique');
         yield MenuItem::linkToCrud('Categorie', 'fa fa-file-text', Categorie::class);
@@ -59,9 +59,9 @@ class DashboardController extends AbstractDashboardController
             ->displayUserName(true)
 
             // you can return an URL with the avatar image
-            ->setAvatarUrl('https://...')
+            ->setAvatarUrl('/upload/'.$user->getAvatar())
             // use this method if you don't want to display the user image
-            ->displayUserAvatar(false)
+            ->displayUserAvatar(true)
             // you can also pass an email address to use gravatar's service
             ->setGravatarEmail($user->getEmail())
 
