@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
 import Banner from './Banner';
 import Product from './Product';
 
